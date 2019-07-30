@@ -1,0 +1,11 @@
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.Connectors.File.xml
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.Connectors.File.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.Connectors.File.pdb
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\MARC.Everest.Connectors.File\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\MARC.Everest.Connectors.File\obj\Debug\MARC.Everest.Connectors.File.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest.Connectors.File\obj\Debug\MARC.Everest.Connectors.File.csproj.CopyComplete
+D:\Work\poc\everest\MARC.Everest.Connectors.File\obj\Debug\MARC.Everest.Connectors.File.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.File\obj\Debug\MARC.Everest.Connectors.File.pdb

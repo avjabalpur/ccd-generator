@@ -1,0 +1,7 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.XML
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.pdb

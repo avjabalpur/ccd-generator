@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS</name>
+    </assembly>
+    <members>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Attributes.FeatureRendererAttribute">
+            <summary>
+            Attribute is used to define a class as having the ability to render a particular type of feature
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Attributes.FeatureRendererAttribute.Feature">
+            <summary>
+            Get or set the name of the feature
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Attributes.FeatureRendererAttribute.IsFile">
+            <summary>
+            True if the feature requires the creation of a file
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Attributes.RenderAsAnnotation">
+            <summary>
+            Annotation for the render as
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Attributes.RenderAsAnnotation.RenderName">
+            <summary>
+            Gets or sets the name to render as
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes">
+            <summary>
+            Used for sniffing datatypes in the API library and setting up maps
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.TypeParameterInformation">
+            <summary>
+            Identifies information related to default type parameters
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.TypeParameterInformation.Type">
+            <summary>
+            Get or sets the type the TPI points to
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.TypeParameterInformation.StructureAttribute">
+            <summary>
+            Gets the type's structure attribute
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.TypeParameterInformation.DefaultTypeParameter">
+            <summary>
+            Gets or sets the default type parameter
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.GetBuiltinVocabulary(System.String)">
+            <summary>
+            Get a builting vocabulary
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.Initialize(System.String)">
+            <summary>
+            Intialize
+            </summary>
+            <param name="apiNs">The Namespace of the API to scan</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.IsCollectionType(MohawkCollege.EHR.gpmr.COR.TypeReference)">
+            <summary>
+            Returns true if the specified <paramref name="tr"/> is
+            a collection
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.IsCodeType(MohawkCollege.EHR.gpmr.COR.TypeReference)">
+            <summary>
+            Returns true if the specified <paramref name="tr"/> is
+            a code type
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Datatypes.MapDatatype(MohawkCollege.EHR.gpmr.COR.TypeReference)">
+            <summary>
+            Map datatype <paramref name="t"/> to match the internal datatype
+            </summary>
+            <param name="t">The type to match</param>
+            <returns>The mapped type reference</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Interfaces">
+            <summary>
+            This class is responsible for sniffing COR structures and determining which real API 
+            interfaces that COR class does or will implement
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Interfaces.Initialize(System.String)">
+            <summary>
+            Initialize the interfaces
+            </summary>
+            <param name="apiNs"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Interfaces.GetInterfaceProperties(System.Type)">
+            <summary>
+            Get the interface properties
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.HeuristicEngine.Interfaces.MapInterfaces(MohawkCollege.EHR.gpmr.COR.Class)">
+            TODO: Explanation of parameters missing: c
+                  Description of the value returned missing
+            <summary>
+            Determine which interfaces this class implements
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Interfaces.IFeatureRenderer">
+            <summary>
+            Identifies a feature rendering component
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Interfaces.IFeatureRenderer.Render(System.String,System.String,MohawkCollege.EHR.gpmr.COR.Feature,System.IO.TextWriter)">
+            <summary>
+            Render feature <paramref name="f"/> into the stream identified by <paramref name="tw"/>
+            </summary>
+            <param name="f">The feature to render</param>
+            <param name="tw">The text writer to write feature to</param>
+            <param name="OwnerNS">Owner namespace</param>
+            <param name="apiNs">The target namespace of the generated api</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Interfaces.IFeatureRenderer.CreateFile(MohawkCollege.EHR.gpmr.COR.Feature,System.String)">
+            <summary>
+            Called by the controller when the file was / needs to be created
+            </summary>
+            <param name="f">The feature to publish</param>
+            <param name="FilePath">The path to place the file in</param>
+            <returns>The name of the created file</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Licenses">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Licenses.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Licenses.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Licenses.APACHE">
+            <summary>
+              Looks up a localized string similar to  * Copyright $year$, $org$
+            * 
+            * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you 
+            * may not use this file except in compliance with the License. You may 
+            * obtain a copy of the License at 
+            * 
+            * http://www.apache.org/licenses/LICENSE-2.0 
+            * 
+            * Unless required by applicable law or agreed to in writing, software
+            * distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT
+            * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the 
+            * Licens [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Licenses.BSD">
+            <summary>
+              Looks up a localized string similar to  * Copyright (c) $year$, $org$
+            * All rights reserved.
+            * 
+            * Redistribution and use in source and binary forms, with or without modification, are permitted provided that 
+            * the following conditions are met:
+            * 
+            *    * Redistributions of source code must retain the above copyright notice, this list of conditions and 
+            *       the following disclaimer.
+            *    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions 
+            *      and the following disclaimer in  [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Licenses.MIT">
+            <summary>
+              Looks up a localized string similar to  * Copyright (c) $year$ $org$
+            * 
+            * Permission is hereby granted, free of charge, to any person
+            * obtaining a copy of this software and associated documentation
+            * files (the &quot;Software&quot;), to deal in the Software without
+            * restriction, including without limitation the rights to use,
+            * copy, modify, merge, publish, distribute, sublicense, and/or sell
+            * copies of the Software, and to permit persons to whom the
+            * Software is furnished to do so, subject to the following
+            * conditions:
+            * 
+            * The [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer">
+            <summary>
+            Summary of ClassRenderer
+            </summary>
+            <remarks>
+            Todo: These features are not supported, but are planned for future releases of GPMR
+            - State Transitions
+            - State Attributes
+            </remarks>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.FactoryMethodInfo">
+            <summary>
+            Structure contains the factory method information
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateStructureAttribute(MohawkCollege.EHR.gpmr.COR.Class)">
+            <summary>
+            Create the API structure attribute for class <paramref name="cls"/>
+            </summary>
+            <param name="cls">The COR Class to create the structure attribute for</param>
+            <returns>The structure attribute</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateCollapsedConstructor(MohawkCollege.EHR.gpmr.COR.Class,System.String)">
+            <summary>
+            Create a collapsed constructor. Basically this will collapse off useless nesting
+            of this type's properies if necessary
+            </summary>
+            <param name="cls">The class to create a constructor for</param>
+            <param name="ownerNs">The namespace of the class</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.DetermineCollapsedName(MohawkCollege.EHR.gpmr.COR.Property)">
+            <summary>
+            Determins the name of a collapsable type
+            </summary>
+            <param name="p">The property to collapse</param>
+            <returns>A stack of name/type references that dictates the name of the collapsed class and a type reference to the class</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateValidateFunction(MohawkCollege.EHR.gpmr.COR.Class)">
+            <summary>
+            Creates a validation function that will return true if this class meets the minimum criteria for validation
+            </summary>
+            <param name="cls">The class to create the validate function for</param>
+            <returns>The string that contains the body of the validate function</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateEqualityMethod(MohawkCollege.EHR.gpmr.COR.Class)">
+            <summary>
+            Create the equality method
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreatePropertyAttribute(MohawkCollege.EHR.gpmr.COR.Property,System.String,System.Int32,System.Int32)">
+            <summary>
+            Create the API Property attribute for a property
+            </summary>
+            <param name="property">The property to create an attribute for</param>
+            <param name="indent">The level of indentation to apply</param>
+            <returns>The property attribute to append to the code file</returns>
+            <param name="ownerNs">The namespace of the owner class</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateMarkerAttribute(MARC.Everest.Attributes.MarkerAttribute.MarkerAttributeType,System.Int32)">
+            <summary>
+            Create a marker attribute
+            </summary>
+            <param name="indent">The indentation level of the code</param>
+            <param name="markerType">The type of marker to create</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateDatatypeRef(MohawkCollege.EHR.gpmr.COR.TypeReference,MohawkCollege.EHR.gpmr.COR.Property)">
+            <summary>
+            Create a datatype reference
+            </summary>
+            <param name="p">The proeprty to create a data type reference for</param>
+            <param name="tr">The type reference to create the data type reference</param>
+            <returns>The data type reference as created in code</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateProperty(MohawkCollege.EHR.gpmr.COR.ClassContent,System.String,System.Int32)">
+            <summary>
+            Create a .NET property 
+            </summary>
+            <remarks>hello</remarks>
+            <param name="cc">The class content to render</param>
+            <param name="ownerNs">The name of the owner namespace</param>
+            <returns>The property string as it appears in C#</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreatePascalCasedName(MohawkCollege.EHR.gpmr.COR.Property)">
+            <summary>
+            Create pascal cased name
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateFactoryMethod(MohawkCollege.EHR.gpmr.COR.TypeReference,System.String)">
+            <summary>
+            Renders the parameters and population statements for that variable
+            </summary>
+            <param name="clsRef">The class to create a factory method for</param>
+            <param name="populateVarName">The variable to populate in code</param>
+            <returns>A dictionary whereby the key references the constructor type and value references the parameters</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateFactoryMethod(MohawkCollege.EHR.gpmr.COR.TypeReference,System.String,System.Boolean)">
+            <summary>
+            Renders the parameters and population statements for that variable
+            </summary>
+            <param name="clsRef">The class to create a factory method for</param>
+            <param name="populateVarName">The variable to populate in code</param>
+            <returns>A dictionary whereby the key references the constructor type and value references the parameters</returns>
+            <param name="bindObjectAsFallback">When set to true, the function will use System.Object to bind any generic arguments no bound. Should be false unless generating an interaction signature</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreatePascalCasedName(MohawkCollege.EHR.gpmr.COR.Choice)">
+            <summary>
+            Create a pascal cased name
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.Render(System.String,System.String,MohawkCollege.EHR.gpmr.COR.Feature,System.IO.TextWriter)">
+            <summary>
+            Render the class from COR to C#
+            </summary>
+            <param name="apiNs">The namespace to render the api in</param>
+            <param name="f">The feature (class) being rendered</param>
+            <param name="OwnerNs">The namespace the class is to be rendered in</param>
+            <param name="tw">The textwriter to write to</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.ClassRenderer.CreateFile(MohawkCollege.EHR.gpmr.COR.Feature,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="f"></param>
+            <param name="FilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.DocumentationRenderer">
+            <summary>
+            Helper class for rendering documentation
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.DocumentationRenderer.Render(MohawkCollege.EHR.gpmr.COR.Documentation,System.Int32)">
+            <summary>
+            Render COR documentation to C# documentation
+            </summary>
+            <param name="doc">The documentation to render</param>
+            <param name="tabLevel">The indentation level</param>
+            <returns>The rendered c# comments</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer">
+            <summary>
+            Renders enumerations
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.m_renderedFiles">
+            <summary>
+            The list of files currently rendered
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.m_markedForUse">
+            <summary>
+            Enumerations marked for use
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.MarkAsUsed(MohawkCollege.EHR.gpmr.COR.Enumeration)">
+            <summary>
+            Mark as used
+            </summary>
+            <param name="enu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.WillRender(MohawkCollege.EHR.gpmr.COR.Enumeration)">
+            <summary>
+            Determine if we'll render this or not
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.Render(System.String,System.String,MohawkCollege.EHR.gpmr.COR.Feature,System.IO.TextWriter)">
+            <summary>
+            Render the feature
+            </summary>
+            <param name="apiNs">The namespace of the owned API</param>
+            <param name="f">The feature to render</param>
+            <param name="OwnerNS">The namespace of the feature</param>
+            <param name="tw">The textwriter to write data to</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.RenderFilterExpression(System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.FilterExpression})">
+            <summary>
+            Render filter expression
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.RenderLiterals(System.IO.StringWriter,MohawkCollege.EHR.gpmr.COR.Enumeration,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue})">
+            <summary>
+            Render literals
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.EnumerationRenderer.CreateFile(MohawkCollege.EHR.gpmr.COR.Feature,System.String)">
+            <summary>
+            Create a file name 
+            </summary>
+            <param name="f">The feature to create a file for</param>
+            <param name="FilePath">The path of the file</param>
+            <returns>The full name of the file to create</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer">
+            <summary>
+            Summary of InteractionRenderer
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.triggerEventOid">
+            <summary>
+            Default for trigger event, interaction id and profile id OIDs
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.interactionIdOid">
+            <summary>
+            Default for trigger event, interaction id and profile id OIDs
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.profileIdOid">
+            <summary>
+            Default for trigger event, interaction id and profile id OIDs
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.profileId">
+            <summary>
+            Default for trigger event, interaction id and profile id OIDs
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.GenerateFactoryMethod(MohawkCollege.EHR.gpmr.COR.TypeReference,System.String)">
+            TODO: Explanation of parameters missing: tr and ownerNs
+                  Description of the value returned missing
+            <summary>
+            Create a static factory method that creates a type
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.Render(System.String,System.String,MohawkCollege.EHR.gpmr.COR.Feature,System.IO.TextWriter)">
+            TODO: Explanation of parameters missing: OwnerNS, apiNs, f and tw
+                  Summary explanation needed
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.CreateInteractionDatatype(MohawkCollege.EHR.gpmr.COR.TypeReference)">
+            TODO: Explanation of parameters missing: typeReference
+                  Description of the value returned missing
+            <summary>
+            Create the interaction inheritence for the specified type reference
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.GatherUsings(MohawkCollege.EHR.gpmr.COR.TypeReference)">
+            TODO: Explanation of parameters missing: tr
+                  Description of the value returned missing
+            <summary>
+            Gather all of the using statements
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.InteractionRenderer.CreateFile(MohawkCollege.EHR.gpmr.COR.Feature,System.String)">
+            TODO: Explanation of parameters missing: f and FilePath
+                  Description of the value returned missing
+            <summary>
+            Create interaction
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.SubsystemRenderer">
+            <summary>
+            Renders a sub-system from COR to C#
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.SubsystemRenderer.Render(System.String,System.String,MohawkCollege.EHR.gpmr.COR.Feature,System.IO.TextWriter)">
+            TODO: Explanation of parameters missing: OwnerNS, apiNs, f and tw
+                  Summary explanation needed
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Renderer.SubsystemRenderer.CreateFile(MohawkCollege.EHR.gpmr.COR.Feature,System.String)">
+            TODO: Explanation of parameters missing: f and FilePath
+                  Description of the value returned missing
+            <summary>
+            This actually creates a directory
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer">
+            <summary>
+            Rim based C# class generator
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.GenerateVocab">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.RootClass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.GenerateRim">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.RenderPartials">
+            <summary>
+            When true, render  partials
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.SuppressDoc">
+            <summary>
+            Suppress documentation
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.MaxLiterals">
+            <summary>
+            The maximum number of literals that can be rendered using this renderer
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.prefRealm">
+            <summary>
+            Preferred rendering realm when there is a conflict
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.Identifier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.ExecutionOrder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.Execute">
+            <summary>
+            Execute the pipleine component
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.RenderFeatureList(System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.Feature},System.String[][],System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Attributes.FeatureRendererAttribute,MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Interfaces.IFeatureRenderer}},Microsoft.Build.BuildEngine.BuildItemGroup,Microsoft.Build.BuildEngine.BuildItemGroup,System.Collections.Generic.Dictionary{System.String,System.Collections.Specialized.StringCollection})">
+            <summary>
+            Render feature list
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.CurrentDomain_AssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Assembly resolution
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.GenerateFormatterAssembly(System.String,System.Reflection.Assembly,System.String)">
+            <summary>
+            Generate a formatter assembly
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.RimbaCsRenderer.Help">
+            <summary>
+            Display help
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Template">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Template.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Template.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Template.AssemblyInfo" -->
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Template.Default">
+             <summary>
+               Looks up a localized string similar to /*
+             *
+             * $license$
+             *
+             * Date: $date$ at $time$
+             * Author: $author$
+             * 
+             * This file was automatically generated by the General Purpose Mif Rendering Tool $version$
+             * CLR Version: $clrversion$
+             */
+            
+            using System;
+            using System.Xml;
+            using System.Collections.Generic;
+            .
+             </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Util.Util">
+            <summary>
+            Utility class
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Util.Util.MakeFriendly(System.String)">
+            <summary>
+            Camel cases the specified string
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Util.Util.PascalCase(System.String)">
+            TODO: 
+                  Description of the value returned missing
+                  Summary needs to be more descriptive
+            <summary>
+            Pascal case 
+            </summary>
+            <param name="original">The original string</param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.RimbaCS.Util.Util.StringEscape(System.String)">
+            <summary>
+            String escape a string
+            </summary>
+        </member>
+    </members>
+</doc>

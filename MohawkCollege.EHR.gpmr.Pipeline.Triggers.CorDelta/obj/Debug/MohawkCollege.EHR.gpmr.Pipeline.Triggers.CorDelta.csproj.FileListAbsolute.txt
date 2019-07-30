@@ -1,0 +1,13 @@
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.dll
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.pdb
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.COR.dll
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.COR.pdb
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.pdb
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.xml
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll.config
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.csprojAssemblyReference.cache
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.csproj.CopyComplete
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.dll
+D:\Work\poc\everest\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorDelta.pdb

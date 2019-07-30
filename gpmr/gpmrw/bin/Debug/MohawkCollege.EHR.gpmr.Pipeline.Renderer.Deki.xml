@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki</name>
+    </assembly>
+    <members>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article">
+            <summary>
+            This class represents an article
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Style">
+            <summary>
+            Identifies style information for the article
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Abstract">
+            <summary>
+            Provide an abstract data about the contents of the package
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Url">
+            <summary>
+            Represents this article's URL
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Name">
+            <summary>
+            Gets or sets the name of the page
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Title">
+            <summary>
+            Get or set the title of the article
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Parent">
+            <summary>
+            The parent of this article
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Children">
+            <summary>
+            Child articles
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.Content">
+            <summary>
+            Content of the article
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.#ctor">
+            <summary>
+            Construct a new instance of article
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.children_ArticleRemoved(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article,MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection)">
+            <summary>
+            Clear the parent of the published article
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.children_ArticleAdded(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article,MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection)">
+            <summary>
+            Set the parent of the published article
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.CompareTo(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article)">
+            <summary>
+            Compares this Deki Article to another Deki Article using their titles
+            </summary>
+            <param name="other">The other deki article</param>
+            <returns>Returns the difference between the two articles</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article.ToString">
+            <summary>
+            Represents this object as a string
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticlePublishedHandler">
+            <summary>
+            Identifies that an article has been published to a collection
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection">
+            <summary>
+            Represents a collection of articles
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.ArticleComparator">
+            <summary>
+            Comparator for articles
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.ArticleComparator.Compare(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article,MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article)">
+            <summary>
+            Compare <paramref name="x"/> to <paramref name="y"/> based on their titles
+            </summary>
+            <param name="x">The first article</param>
+            <param name="y">The second article</param>
+            <returns>Returns the difference between the two articles</returns>
+        </member>
+        <member name="E:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.ArticleAdded">
+            <summary>
+            Fired when a new article is added to this collection
+            </summary>
+        </member>
+        <member name="E:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.ArticleRemoved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.Add(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.Clear">
+            <summary>
+            Clear this collection
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.Contains(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article)">
+            <summary>
+            Check if this collection contains an item
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.CopyTo(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article[],System.Int32)">
+            <summary>
+            Copy to an array
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.Count">
+            <summary>
+            Get the count of items
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.IsReadOnly">
+            <summary>
+            Returns true if this collection is readonly
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.Remove(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article)">
+            <summary>
+            Remove an item
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.GetEnumerator">
+            <summary>
+            Get an enumerator
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection.Find(System.String)">
+            <summary>
+            Find an article
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator">
+            <summary>
+            Class is responsible for pushing articles and negotiating with deki server
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.DekiCommState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.DekiCommState.Closed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.DekiCommState.Open">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.DekiCommState.Authenticated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.DekiCommState.TrustFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.State">
+            <summary>
+            The current state
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.AuthToken">
+            <summary>
+            The authorization token
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.Address">
+            <summary>
+            The URL of the server
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.Publish(System.String,System.String,System.String)">
+            <summary>
+            Publish an article to the wiki
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.Authenticate(System.String,System.String)">
+            <summary>
+            Authenticate against the deki server
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator.PublishProperty(System.String,System.String,System.String)">
+            <summary>
+            Publish a property
+            </summary>
+            <param name="p"></param>
+            <param name="p_2"></param>
+            <param name="path"></param>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer">
+            <summary>
+            Render MIF files into HTML documentation and post them to a deki wiki system
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.helpText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.Identifier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.ExecutionOrder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.Init(MohawkCollege.EHR.gpmr.Pipeline.Pipeline)">
+            <summary>
+            
+            </summary>
+            <param name="Context"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.Execute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.Publish(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.ArticleCollection)">
+            <summary>
+            Publish to deki-wiki
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.PublishArticle(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Communications.DekiCommunicator,MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Publish an article and its children
+            </summary>
+            <param name="dc"></param>
+            <param name="a">The article to publish</param>
+            <param name="path">The path to publish to</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.PersistArticle(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article,System.String)">
+            <summary>
+            Persist an article to the specified path
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.DekiRenderer.Help">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate">
+            <summary>
+            Represents a documentation template
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Worker">
+            <summary>
+            Thread Worker Class
+            </summary>
+        </member>
+        <member name="E:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Worker.OnComplete">
+            <summary>
+            Fires when the worker stops working
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Worker.FeatureTemplate">
+            <summary>
+            Feature template that is processing
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Worker.ArticleCollection">
+            <summary>
+            The article collection
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Worker.Start(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.GlobalTemplate">
+            <summary>
+            Identifies the HTML that goes around all generated pages
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Templates">
+            <summary>
+            Identifies the feature templates in this doc
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Style">
+            <summary>
+            Identifies the style of the site
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Version">
+            <summary>
+            Version of this template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Output">
+            <summary>
+            Output MIME type
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Author">
+            <summary>
+            The author of this template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Name">
+            <summary>
+            The name of the template
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.FindTemplate(System.String,System.Object)">
+            <summary>
+            Find a feature template
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.Process(MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Process each feature in the class repository and output them to the article collection
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate.PrepareTOC(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Article.Article)">
+            <summary>
+            Generate the TOC
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate">
+            <summary>
+            Template representing a feature
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.MustHave">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.PageAbstractProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.PageTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.PagePathTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.SubTemplates">
+            <summary>
+            Sub templates to apply in this scope
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.PageTitleProperty">
+            <summary>
+            Name of the property that should represent the title of this page
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.NewPage">
+            <summary>
+            True if a new article should be created when this feature template is invoked
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.Feature">
+            <summary>
+            The feature being defined in this template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.Mode">
+            <summary>
+            The feature mode, determines under what context the feature template should be
+            applied
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.FillTemplate">
+            <summary>
+            Fill the template
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.ApplyXmlElementTemplates(System.String)">
+            <summary>
+            Apply all xml element templates
+            </summary>
+            <param name="output">The current output</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.GetPropertyTemplate(System.String)">
+            <summary>
+            Look for a property template that has the matching name (first priority) or
+            failing that, property identifier
+            </summary>
+            <param name="NameOrProperty">The property or name of the template</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.GetTitle">
+            <summary>
+            Get the title of the article
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.GetAbstract">
+            <summary>
+            Get the abstract of the article
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate.GetPath">
+            <summary>
+            Get the page path
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FunctoidTemplate">
+            <summary>
+            Functoid template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FunctoidTemplate.MethodName">
+            <summary>
+            Gets the member that represents the function in the
+            .NET assembly
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FunctoidTemplate.ContainerType">
+            <summary>
+            The fully qualified name of the type
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FunctoidTemplate.Escaped">
+            <summary>
+            True when escaped
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FunctoidTemplate.ExecuteMethod(System.Object)">
+            <summary>
+            Execute the method and return result
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FunctoidTemplate.FillTemplate">
+            <summary>
+            Fill in template details
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate">
+            <summary>
+            Identifies a template section with no parameter or property templates
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.Spawn(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate,MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.DocTemplate,System.Object)">
+            <summary>
+            Spawn a new template from another
+            </summary>
+            <param name="Clonee">The existing template to clone from</param>
+            <param name="Parent">The parent DocTemplate</param>
+            <param name="Context">The context object</param>
+            <returns>A spawned clone</returns>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.Parent">
+            <summary>
+            Parent template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.Annotations">
+            <summary>
+            Annotations
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.Context">
+            <summary>
+            Get or set the context object that will be used to populate the template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.Content">
+            <summary>
+            The content of the template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.XmlContent">
+            <summary>
+            Get the content of this represented as an xml document
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.GetContextPropertyValue(System.String)">
+            <summary>
+            Get the value of a property
+            </summary>
+            <param name="PropertyName">The name of the property</param>
+            <returns>The property</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NonParameterizedTemplate.FillTemplate(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.FeatureTemplate)">
+            <summary>
+            Fill this template
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NamedTemplate">
+            <summary>
+            Represents a template with additional sub-scope templates below it
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NamedTemplate.Name">
+            <summary>
+            Get or set the name of the template
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NamedTemplate.FillTemplate">
+            <summary>
+            Fill the template with the data it needs
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.NamedTemplate.ConvertToObjectArray(System.Object)">
+            <summary>
+            Convert object o to an array of object
+            </summary>
+            <param name="o">The object array to convert to</param>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate">
+            <summary>
+            Identifies a template that applies to properties
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate.Escaped">
+            <summary>
+            True if the value should be escaped
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate.Property">
+            <summary>
+            Identifies the property this template is applied for
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate.Compare(MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate,MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.PropertyTemplate.FillTemplate">
+            <summary>
+            Fill this property template
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.ObjectTemplate">
+            <summary>
+            Parses an object Tag and gives a template sane access to the param tags 
+            </summary>
+            <example>
+            <code lang="xml">
+            &lt;object class="Test"&gt;
+                &lt;param name="name1" value="value1"/&gt;
+            &lt;/object&gt;
+            </code>
+            
+            Results in
+            <code lang="xml">
+            &lt;a href="$name1$"&gt;$name1$&lt;/a&gt;
+            </code>
+            </example>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.ObjectTemplate.FillTemplate">
+            <summary>
+            Fill the template with data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.XmlElementTemplate">
+            <summary>
+            Represents an xml element template
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.XmlElementTemplate.Match">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.TemplateCore.XmlElementTemplate.FillTemplate">
+            <summary>
+            Fill this template
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Templates">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Templates.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Templates.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Templates.__Default_nopub">
+             <summary>
+               Looks up a localized string similar to &lt;docTemplate name=&quot;Clean&quot; author=&quot;Justin Fyfe&quot; output=&quot;text/html&quot; xmlns=&quot;http://marc.mohawkcollege.ca/hi&quot;&gt;
+            
+            
+              &lt;!-- Style is not currently supported for publishing to DEKI, need to figure out how to register a global style --&gt;
+              &lt;style&gt;
+                &lt;![CDATA[
+                
+                #gpmrSummaryDiv  
+                    {
+                      width:320px;
+                      max-width:350px;
+                    	z-index:10;
+                    	float:right;
+                    	border:solid 1px #3366cc;
+                    	background-image:url(&apos;http://wiki2.marc-hi.ca/skins/deuce/lighty-blue/hea [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Templates.Classic">
+             <summary>
+               Looks up a localized string similar to &lt;docTemplate name=&quot;Default&quot; author=&quot;Justin Fyfe&quot; output=&quot;text/html&quot; xmlns=&quot;http://marc.mohawkcollege.ca/hi&quot;&gt;
+            
+              &lt;!-- Defines what goes on any outputted file, no matter what --&gt;
+              &lt;globalTemplate&gt;
+                &lt;![CDATA[
+            		&lt;!-- 
+            			This page was automatically generated using the General Purpose Mif Rendering Tool
+            			using the DEKI-WIKI rendering extension.
+            			
+            			Rendered By: $user$
+            			Rendered On: 01-09-2009 at $time$
+            			Article Title: $value$
+            		--&gt;
+                &lt;style type=&quot;text/css&quot;&gt;
+                  .rightCol { padding: [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Renderer.Deki.Templates.Clean">
+             <summary>
+               Looks up a localized string similar to &lt;docTemplate name=&quot;Clean&quot; author=&quot;Justin Fyfe&quot; output=&quot;text/html&quot; xmlns=&quot;http://marc.mohawkcollege.ca/hi&quot;&gt;
+            
+              
+              &lt;!-- Style is not currently supported for publishing to DEKI, need to figure out how to register a global style --&gt;
+              &lt;style&gt;
+                &lt;![CDATA[
+                
+                #gpmrSummaryDiv  
+                    {
+                      width:320px;
+                      max-width:350px;
+                    	z-index:10;
+                    	float:right;
+                    	border:solid 1px #3366cc;
+                    	background-image:url(&apos;http://wiki2.marc-hi.ca/skins/deuce/lighty-blue/h [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+    </members>
+</doc>

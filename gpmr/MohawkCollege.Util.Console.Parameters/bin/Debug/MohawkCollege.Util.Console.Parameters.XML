@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MohawkCollege.Util.Console.Parameters</name>
+    </assembly>
+    <members>
+        <member name="T:MohawkCollege.Util.Console.Parameters.ParameterAttribute">
+            <summary>
+            The parameter attribute class marks a property as a 
+            parameter that can be parsed as a console parameter
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.Util.Console.Parameters.ParameterAttribute.Name">
+            <summary>
+            Get or set the name of the parameter from the command prompt
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.Parameters.ParameterAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ParameterName"></param>
+        </member>
+        <member name="T:MohawkCollege.Util.Console.Parameters.ParameterExtensionAttribute">
+            <summary>
+            The ParameterExtensionAttribute marks a property field as "contains" other
+            types that may be used for the population of parameters.
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.Util.Console.Parameters.ParameterParser`1">
+            <summary>
+            The parameter parser class is responsible for parsing a class that contains
+            properties set with the parameter attribute. 
+            </summary>
+            <typeparamref name="T">The class to parse</typeparamref>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.Parameters.ParameterParser`1.#ctor">
+            <summary>
+            Creates a new instance of the parameter parser class
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.Parameters.ParameterParser`1.WriteHelp(System.IO.TextWriter)">
+            <summary>
+            Write help using the <see cref="T:System.ComponentModel.DescriptionAttribute"/> and <see cref="T:MohawkCollege.Util.Console.Parameters.ParameterAttribute"/> 
+            attributes.
+            </summary>
+            <param name="tw">The text writer to write the help to</param>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.Parameters.ParameterParser`1.Parse(System.String[])">
+            <summary>
+            Parse a parameter array into a class of <typeparamref name="T"/>. This parses an array that 
+            is passed to a console program and populates a new instance of T. An example of the accepted
+            formats for the parameters is attached below
+            <example>
+            -j hello			Sets parameter j to hello
+            --journal=hello		Sets parameter journal to hello
+            -j					Sets parameter j to true
+            --journal			Sets parameter journal to true
+            -j hello1 -j hello2	Adds the value hello1 and hello2 to parameter j
+            -jbd				Sets parameters j b and d to true
+            </example>
+            </summary>
+            <param name="argv">The argument list to parse</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MARC.Everest.Connectors.MSMQ</name>
+    </assembly>
+    <members>
+        <member name="T:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector">
+            <summary>
+            The MSMQ Publish provides a mechanism for publishing data to an Microsoft Message Queue.
+            </summary>
+            <example>
+            
+            <code lang="cs" title="Publish variable 'instance' to Queue .\Private$\test">
+                   PRPA_IN101001CA instance = new PRPA_IN101001CA();
+                   MsmqPublishConnector conn = new MsmqPublishConnector();
+                   conn.Formatter = new MARC.Everest.Formatters.XML.ITS1.Formatter(); //"queue=.\Private$\test"
+                   conn.Formatter.GraphAides.Add(typeof(MARC.Everest.Formatters.XML.Datatypes.R1.Formatter));
+                   conn.Open();
+                   conn.Send(instance);
+                   conn.Close();
+            </code>
+            </example> 
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.#ctor">
+            <summary>
+            Creates a new instance of the Msmq
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.#ctor(System.String)">
+            <summary>
+            Create a new instance of the Msmq connector with the specified connection string
+            </summary>
+            <param name="connectionString">The connection string</param>
+        </member>
+        <member name="F:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.queue">
+            <summary>
+            Message queue that represents the connection to the queue
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Worker">
+            <summary>
+            Worker
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Worker.Result">
+            <summary>
+            Result of the operation
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Worker.Formatter">
+            <summary>
+            Formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Worker.Completed">
+            <summary>
+            Callback
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Worker.Queue">
+            <summary>
+            A shared handle to the parent's queue
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Worker.Work(System.Object)">
+            <summary>
+            Perform the work (formatting)
+            </summary>
+            <param name="state">The user state in this function is an instance of IGraphable</param>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Send(MARC.Everest.Interfaces.IGraphable)">
+            <summary>
+            Publish a message to the currently opened queue
+            </summary>
+            <param name="data">The data to publish to the queue</param>
+            <returns>A <see cref="T:MARC.Everest.Connectors.ISendResult"/> structure representing the result of the send operation </returns>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.BeginSend(MARC.Everest.Interfaces.IGraphable,System.AsyncCallback,System.Object)">
+            <summary>
+            Start an asynchronous send operation
+            </summary>
+            <param name="data">The data to publish to the queue</param>
+            <param name="callback">An <see cref="T:System.AsyncCallback"/> delegate to call when the operation is completed</param>
+            <param name="state">An object representing user state</param>
+            <returns>An <see cref="T:System.IAsyncResult"/> structure that represent the asynchronous method</returns>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.EndSend(System.IAsyncResult)">
+            <summary>
+            End the asynchronous send operation 
+            </summary>
+            <param name="asyncResult">The result of the BeginSend method</param>
+            <returns>A <see cref="T:MARC.Everest.Connectors.ISendResult"/> representing the result of the send operation</returns>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.ConnectionString">
+            <summary>
+            Gets or sets the connection string
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Open">
+            <summary>
+            Open a connection to the queue
+            </summary>
+            <remarks>
+            <list type="table">
+            <listheader><term>Key</term><description>Description</description></listheader>
+            <item><term>Queue</term><description>The name of the queue to open</description>   </item>
+            <item><term>Exclusive</term><description>True if shared mode should be disabled on the queue (first app to the queue has exclusive access)</description></item>
+            <item><term>Cache</term><description>True if a connection cache should be created</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Close">
+            <summary>
+            Close the connection to the queue
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.IsOpen">
+            <summary>
+            Returns true if the queue connection is open
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Formatter">
+            <summary>
+            Gets or sets the formatter to use when sending messages to the queue
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.MSMQ.MsmqPublishConnector.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:MARC.Everest.Connectors.MSMQ.MsmqSendResult">
+            <summary>
+            Represents the result of an MSMQ send operation
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqSendResult.Code">
+            <summary>
+            Code of the send
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.MSMQ.MsmqSendResult.Details">
+            <summary>
+            Details of the send
+            </summary>
+        </member>
+    </members>
+</doc>

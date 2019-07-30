@@ -1,0 +1,17 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.XML
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.xml
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\obj\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.csprojAssemblyReference.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\obj\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\obj\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.csproj.CopyComplete
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\obj\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.HL7v3.MIF.MIF20\obj\Debug\MohawkCollege.EHR.HL7v3.MIF.MIF20.pdb

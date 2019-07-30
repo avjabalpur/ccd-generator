@@ -1,0 +1,1842 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MARC.Everest.Formatters.XML.Datatypes.R2</name>
+    </assembly>
+    <members>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult">
+            <summary>
+            Formatter graph result for datatypes structures
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.AddResultDetail(MARC.Everest.Connectors.IResultDetail)">
+            <summary>
+            Add a result detail item
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.Details">
+            <summary>
+            Gets the details of the parse
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.Code">
+            <summary>
+            Gets the result code of the formatting result
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.#ctor(System.Boolean)">
+            <summary>
+            Datatype formatter graph result
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.#ctor(MARC.Everest.Connectors.ResultCode,MARC.Everest.Connectors.IResultDetail[],System.Boolean)">
+            <summary>
+            Datatype formatter graph result
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.ValidateConformance">
+            <summary>
+            Gets or sets whether the formatter validated conformance
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult.AddResultDetail(System.Collections.Generic.IEnumerable{MARC.Everest.Connectors.IResultDetail})">
+            <summary>
+            Add result details from an array
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult">
+            <summary>
+            Formatter parse result for datatypes structures
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.AddResultDetail(MARC.Everest.Connectors.IResultDetail)">
+            <summary>
+            Add a result detail item
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.AddResultDetail(System.Collections.Generic.IEnumerable{MARC.Everest.Connectors.IResultDetail})">
+            <summary>
+            Add result details from an array
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.Details">
+            <summary>
+            Gets the details of the parse
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.Code">
+            <summary>
+            Gets the result code of the formatting result
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.#ctor(System.Boolean)">
+            <summary>
+            Datatype formatter parse result
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.#ctor(MARC.Everest.Connectors.ResultCode,MARC.Everest.Connectors.IResultDetail[],System.Boolean)">
+            <summary>
+            Datatype formatter parse result
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult.ValidateConformance">
+            <summary>
+            Gets or sets whether the formatter validated conformance
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter">
+            <summary>
+            Formatter for DataTypes R2
+            </summary>
+            <remarks>
+            This formatter should be used when systems are utilizing the ISO 21090
+            datatypes harmonization for HL7v3
+            </remarks>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.FormatterCulture">
+            <summary>
+            Formatter culture
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.#ctor">
+            <summary>
+            Creates a new instance of the data type r2 formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.#cctor">
+            <summary>
+            Statuc ctor for the Formatter class
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.GetFormatter(System.Type)">
+            <summary>
+            Get the datatype formatter for the specified type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.GetFormatter(System.String)">
+            <summary>
+            Get a formatter based on the XSI type name
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.GraphAides">
+            <summary>
+            Gets or sets the list of graph aides that this formatter can employ
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Host">
+            <summary>
+            Gets or sets the host structure formatter, that is the formatter to which this formatter belongs
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.HandleStructure">
+            <summary>
+            Gets a list of structure types that this formatter can "handle"
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Clone">
+            <summary>
+            Clone this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Graph(System.Xml.XmlWriter,MARC.Everest.Interfaces.IGraphable)">
+            <summary>
+            Graphs object <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+            <param name="s">The stream to graph to</param>
+            <param name="o">The object to graph</param>
+            <returns>A formatter graphing result</returns>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Parse(System.Xml.XmlReader)">
+            <summary>
+            Parse an object from <paramref name="r"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Parse(System.Xml.XmlReader,System.Type)">
+            <summary>
+            Parse an object from <paramref name="r"/> using the type hint <paramref name="t"/>
+            </summary>
+            <param name="r">The reader to read from</param>
+            <param name="t">The type hint for the formatter</param>
+            <returns>A structured result</returns>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Graph(System.IO.Stream,MARC.Everest.Interfaces.IGraphable)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Parse(System.IO.Stream)">
+            <summary>
+            Parse a structure from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.GetSupportedProperties(System.Type)">
+            <summary>
+            Get the supported properties for the type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.CopyBaseAttributes(MARC.Everest.DataTypes.ANY,MARC.Everest.DataTypes.ANY)">
+            <summary>
+            Copy base attributes from one ANY to another
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.ValidateConformance">
+            <summary>
+            When true, instructs the formatter to conduct validation
+            </summary>
+            <remarks>This is default to true</remarks>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.CreateXSITypeName(System.Type)">
+            <summary>
+            Create the XSI type name, ignoring some of the generic types that don't 
+            emit the _
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2Formatter.Dispose">
+            <summary>
+            Dispose the object
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter">
+            <summary>
+            A data types R2 formatter for the AD data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph the object <paramref name="o"/> to <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an AD instance from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter.HandlesType">
+            <summary>
+            Handles type of AD
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter.GenericArguments">
+            <summary>
+            GEts or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter">
+            <summary>
+            A formatter helper that renders ADXP in data types R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse <paramref name="s"/> to an instance of ADXP
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter.HandlesType">
+            <summary>
+            Handles type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter.Host">
+            <summary>
+            Gets or sets the host 
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter.GenericArguments">
+            <summary>
+            Gets or sets generic type arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ADXPFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter">
+            <summary>
+            Formatter for the HXIT datatype
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.#ctor">
+            <summary>
+            Create a new instance of ANYFormatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.GenericArguments">
+            <summary>
+            Get or set the generic arguments to this type (if applicable)
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph the object
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse the object
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.Parse``1(System.Xml.XmlReader)">
+            <summary>
+            Parse ANY object using a concrete implementation of ANY
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.Validate(MARC.Everest.DataTypes.ANY,System.String,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Validate the object
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.HandlesType">
+            <summary>
+            Handles the type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.Host">
+            <summary>
+            Host context
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ANYFormatter.GetSupportedProperties">
+            <summary>
+            Return all supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter">
+            <summary>
+            A formatter that graphs and interprets the <see cref="T:MARC.Everest.DataTypes.BL"/> class
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs object <paramref name="o"/> onto stream <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parses an object from stream <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter.HandlesType">
+            <summary>
+            Gets the type that this datatype formatter can graph
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter.Host">
+            <summary>
+            Gets or sets the formatting host that this formatter operates within
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments to the formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BLFormatter.GetSupportedProperties">
+            <summary>
+            Get supported properties 
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter">
+            <summary>
+            Represents a formatter that can serialize a CD to the wire
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.CreateCodeExpression(MARC.Everest.DataTypes.Interfaces.ICodedValue)">
+            <summary>
+            Creates an code expression for a coded value
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.CreateCodeExpression(MARC.Everest.DataTypes.Interfaces.IConceptDescriptor)">
+            <summary>
+            Create code expression for the specified concept descriptor
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.CreateCodeExpression(MARC.Everest.DataTypes.Interfaces.IConceptDescriptor,System.Boolean)">
+            <summary>
+            Creates a code expression following the rules 
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.ParseCodeExpression(System.String,MARC.Everest.DataTypes.Interfaces.ICodedValue)">
+            <summary>
+            Parse IHTSDO expression code
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.ParseCodeExpressionQualifier(System.String,MARC.Everest.DataTypes.Interfaces.ICodedValue)">
+            <summary>
+            Parse IHTSDO Expression CR List
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.HandlesType">
+            <summary>
+            Get the type that this formatter helper handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.Host">
+            <summary>
+            Gets or sets the host 
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CDFormatter.Parse``1(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse a CD as a particular type
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter">
+            <summary>
+            Represents a formatter that can represent CE in DT R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse a CE instance from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter helper can handle
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter.Host">
+            <summary>
+            Gets or sets the host context of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CEFormatter.GetSupportedProperties">
+            <summary>
+            Gets the properties supported by this formatter
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter">
+            <summary>
+            CO Formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter helper graphs
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter.Host">
+            <summary>
+            Gets or sets the host formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments to this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COFormatter.GetSupportedProperties">
+            <summary>
+            Gets the list of supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter">
+            <summary>
+            Formatter helper for the COLL data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/> storing 
+            details in <paramref name="result"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter.HandlesType">
+            <summary>
+            Gets the type that this type handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.COLLFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BAGFormatter">
+            <summary>
+            Formatter helper for the BAG data type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.BAGFormatter.HandlesType">
+            <summary>
+            Gets the type this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter">
+            <summary>
+            NPPD formatter helper
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic parameters
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.NPPDFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ONFormatter">
+            <summary>
+            Organization name formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ONFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ONFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ONFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SCFormatter">
+            <summary>
+            String with code formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SCFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SCFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object instance from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SCFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SCFormatter.GetSupportedProperties">
+            <summary>
+            Get a list of supported properties for the SC type
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter">
+            <summary>
+            Datatype formatter for SLIST
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter.HandlesType">
+            <summary>
+            Gets the type this handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter.Host">
+            <summary>
+            Gets or sets the host 
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter.GenericArguments">
+            <summary>
+            Generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SLISTFormatter.GetSupportedProperties">
+            <summary>
+            Get supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter">
+            <summary>
+            Formatter for the TEL data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter helper handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TELFormatter.GetSupportedProperties">
+            <summary>
+            Gets or sets the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TNFormatter">
+            <summary>
+            Person name formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TNFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TNFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TNFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter">
+            <summary>
+            Formatter helper for the EN data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object instance from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter.HandlesType">
+            <summary>
+            Gets the type that this handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter.Host">
+            <summary>
+            Gets or sets the host formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.HISTFormatter">
+            <summary>
+            Formatter helper for the HIST data type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.HISTFormatter.HandlesType">
+            <summary>
+            Gets the type this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter">
+            <summary>
+            Represents an II formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> to <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter.HandlesType">
+            <summary>
+            Gets the type that this handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IIFormatter.GetSupportedProperties">
+            <summary>
+            Gets the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.LISTFormatter">
+            <summary>
+            Formatter helper for the LIST data type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.LISTFormatter.HandlesType">
+            <summary>
+            Gets the type this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter">
+            <summary>
+            Formatter helper for the MO data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> onto <paramref name="s"/> storing result
+            in <paramref name="result"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse the PQ back into a structure
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter.HandlesType">
+            <summary>
+            Gets the type that this handler accepts
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments for the type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.MOFormatter.GetSupportedProperties">
+            <summary>
+            Gets the list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter">
+            <summary>
+            A formatter that can represent a CS in Data types R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> to <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse object from the wire
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter.Host">
+            <summary>
+            Gets or sets the host of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CSFormatter.GetSupportedProperties">
+            <summary>
+            Gets the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter">
+            <summary>
+            A data types formatter that can represent CV in data types R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an instance of CV from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments for the formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.CVFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of properties that this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EDFormatter">
+            <summary>
+            Formatter that can graph and interpret the ED datatype
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EDFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> onto stream <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EDFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EDFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter can handle
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EDFormatter.Host">
+            <summary>
+            Gets or sets the host of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EDFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments of the formatter
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter">
+            <summary>
+            A formatter that can represent an EIVL in data types R2 format
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an instance of EIVL from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter.Host">
+            <summary>
+            Gets or sets the host of this 
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments for this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.EIVLFormatter.GetSupportedProperties">
+            <summary>
+            Get a list of supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter">
+            <summary>
+            A formatter helper that formats GTS to data types r2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph the object <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an instance of GTS from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter "Handles"
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments to the formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.GTSFormatter.GetSupportedProperties">
+            <summary>
+            Gets or sets the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter">
+            <summary>
+            Formatter for the INT type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter helper graphs
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter.Host">
+            <summary>
+            Gets or sets the host formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments to this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.INTFormatter.GetSupportedProperties">
+            <summary>
+            Gets the list of supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter">
+            <summary>
+            Represents a formatter that can represent the IVL type in Data Types R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter.HandlesType">
+            <summary>
+            Return the handles type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter.Host">
+            <summary>
+            Gets or sets the host formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.IVLFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PDVFormatter">
+            <summary>
+            Formatter for the PDV types
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PDVFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> onto the stream
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PDVFormatter.Parse``1(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PDVFormatter.ParseAttributes``1(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PDVFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter">
+            <summary>
+            A formatter helper that can represent an instance of PIVL in DT R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+            <remarks>For some reason this type is not defined in the ISO Data types XSD</remarks>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an instance of PIVL from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments to this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PIVLFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of properties that are handled by this formatter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PNFormatter">
+            <summary>
+            Person name formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PNFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PNFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PNFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter">
+            <summary>
+            Formatter helper for the PQ data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> onto <paramref name="s"/> storing result
+            in <paramref name="result"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse the PQ back into a structure
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter.HandlesType">
+            <summary>
+            Gets the type that this handler accepts
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter.Host">
+            <summary>
+            Gets or sets the host of this formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments for the type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQFormatter.GetSupportedProperties">
+            <summary>
+            Gets the list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter">
+            <summary>
+            PQR formatter helper for the PQR data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/> saving
+            results in <paramref name="result"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse the string
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter.HandlesType">
+            <summary>
+            Get the type this handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.PQRFormatter.GetSupportedProperties">
+            <summary>
+            Gets or sets the supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter">
+            <summary>
+            A formatter that can represent a QSD in data types r2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/> into an instance of QSP
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter.HandlesType">
+            <summary>
+            Gets the name of the type that this represents
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter.Host">
+            <summary>
+            Gets or sets the host context of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments for the formatters
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSDFormatter.GetSupportedProperties">
+            <summary>
+            Gets the supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter">
+            <summary>
+            A formatter that can represent an instance of one of the QSET classes on the wire in DT R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse a QS* class from a QSET formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter.HandlesType">
+            <summary>
+            Get the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter.Host">
+            <summary>
+            Gets or sets the host of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments for this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSETFormatter.GetSupportedProperties">
+            <summary>
+            Get supported properties of QSET. Since QSET is abstract, none are supported
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter">
+            <summary>
+            A formatter that can represent the QSET Intersect class as a DT r2 instance
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse from wire level format
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter.HandlesType">
+            <summary>
+            Gets the type of handler
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments for the formatter helper
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSIFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter">
+            <summary>
+            A formatter that can represent the QSP data type in R2 format
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/> into an instance of QSP
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter.HandlesType">
+            <summary>
+            Gets the name of the type that this represents
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter.Host">
+            <summary>
+            Gets or sets the host context of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments for the formatters
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSPFormatter.GetSupportedProperties">
+            <summary>
+            Gets the supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter">
+            <summary>
+            Represents a formatter that can represent QSS in data types r2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse from wire level format
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter.HandlesType">
+            <summary>
+            Gets the type of handler
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments for the formatter helper
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSSFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter">
+            <summary>
+            A formatter that can represent a QSU
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse from wire level format
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter.HandlesType">
+            <summary>
+            Gets the type of handler
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments for the formatter helper
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QSUFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter">
+            <summary>
+            Quantity formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter.ParseAttributes``1(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter.ParseElements``1(System.Xml.XmlReader,``0,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse elements
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter.ParseElementsInline(System.Xml.XmlReader,MARC.Everest.DataTypes.Interfaces.IQuantity,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse elements that are inline in the read loop
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter.Host">
+            <summary>
+            Host of this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.QTYFormatter.GetSupportedProperties">
+            <summary>
+            Supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter">
+            <summary>
+            Formatter helper for the REAL data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter helper graphs
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter.Host">
+            <summary>
+            Gets or sets the host formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments to this formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.REALFormatter.GetSupportedProperties">
+            <summary>
+            Gets the list of supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter">
+            <summary>
+            Formatter helper for the RTO type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+            <param name="s">The stream being graphed to</param>
+            <param name="o">The object being graphed</param>
+            <param name="result">The result of the graph operation</param>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse the RTO
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter.HandlesType">
+            <summary>
+            Get the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter.Host">
+            <summary>
+            Gets or sets the host of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments 
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.RTOFormatter.GetSupportedProperties">
+            <summary>
+            Gets the list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SETFormatter">
+            <summary>
+            Formatter helper for the SET data type
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SETFormatter.HandlesType">
+            <summary>
+            Gets the type this formatter handles
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter">
+            <summary>
+            Formatter helper for the ST data type
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.ParseAttributes``1(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse only the attributes
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object instance from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.ParseElementsInline(System.Xml.XmlReader,MARC.Everest.DataTypes.ST,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse elements inline (meaning the element exit criteria has already been handled
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.Host">
+            <summary>
+            Gets or sets the host formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic type arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.STFormatter.GetSupportedProperties">
+            <summary>
+            Gets the supported properties for the ST class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter">
+            <summary>
+            Formatter helper for SXPR
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graphs <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter.HandlesType">
+            <summary>
+            Gets the type that this formater handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter.Host">
+            <summary>
+            Gets or sets the host of the formatter
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter.GenericArguments">
+            <summary>
+            Gets or sets generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.SXPRFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter">
+            <summary>
+            Entity name expression part formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter.HandlesType">
+            <summary>
+            Gets the type this handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter.Host">
+            <summary>
+            Gets or sets the host instance
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.ENXPFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of the supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter">
+            <summary>
+            TS formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an instance from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter.HandlesType">
+            <summary>
+            Gets the type this handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter.GenericArguments">
+            <summary>
+            Gets or sets generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.TSFormatter.GetSupportedProperties">
+            <summary>
+            Gets supported properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter">
+            <summary>
+            UVP Formatter for R2
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph <paramref name="o"/> onto <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse an object from <paramref name="s"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter.HandlesType">
+            <summary>
+            Gets the type that this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter.Host">
+            <summary>
+            Gets or sets the host
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter.GenericArguments">
+            <summary>
+            Gets or sets the generic arguments
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.Formatters.UVPFormatter.GetSupportedProperties">
+            <summary>
+            Gets a list of supported properties
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter">
+            <summary>
+            This interface represents a contract that all datatype formatters
+            must adhere to when participating in the R2 formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter.Graph(System.Xml.XmlWriter,System.Object,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterGraphResult)">
+            <summary>
+            Graph object <paramref name="o"/> to stream <paramref name="s"/>
+            </summary>
+            <param name="s">The stream to graph to</param>
+            <param name="o">The object to graph</param>
+            <param name="result">The current result scope object to append details</param>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter.Parse(System.Xml.XmlReader,MARC.Everest.Formatters.XML.Datatypes.R2.DatatypeR2FormatterParseResult)">
+            <summary>
+            Parse object from <paramref name="s"/>
+            </summary>
+            <param name="s">The stream to parse from</param>
+            <returns>The parsed object</returns>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter.HandlesType">
+            <summary>
+            The type this formatter handles
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter.Host">
+            <summary>
+            Get or set a host context
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter.GenericArguments">
+            <summary>
+            The generic arguments to the type being formatted
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.IDatatypeFormatter.GetSupportedProperties">
+            <summary>
+            Get the supported properties for the rendering
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.UnsupportedDatatypeR2PropertyResultDetail">
+            <summary>
+            Identifies that a property populated within the datatype wasn't rendered
+            to the output stream by the R2 formatter
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.UnsupportedDatatypeR2PropertyResultDetail.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.UnsupportedDatatypeR2PropertyResultDetail.#ctor(MARC.Everest.Connectors.ResultDetailType,System.String,System.String,System.String)">
+            <summary>
+            Creates a new instance of the unsupported data type result detail
+            </summary>
+            <param name="type">The type of result detail</param>
+            <param name="propertyName">The name of the property that is not supported</param>
+            <param name="datatypeName">The name of the datatype that is not supported</param>
+            <param name="location">The location within the instance that that is not supported</param>
+        </member>
+        <member name="T:MARC.Everest.Formatters.XML.Datatypes.R2.NotPermittedDatatypeR2EntityResultDetail">
+            <summary>
+            Identifies that an element or attribute is not permitted on a particular
+            data type in R2
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.NotPermittedDatatypeR2EntityResultDetail.EntityName">
+            <summary>
+            The name of the attribute or element
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.NotPermittedDatatypeR2EntityResultDetail.DatatypeName">
+            <summary>
+            The name of the datatype
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Formatters.XML.Datatypes.R2.NotPermittedDatatypeR2EntityResultDetail.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Formatters.XML.Datatypes.R2.NotPermittedDatatypeR2EntityResultDetail.#ctor(MARC.Everest.Connectors.ResultDetailType,System.String,System.String,System.String)">
+            <summary>
+            Creates a new instance of the Unsupported Datatype Result Detail
+            </summary>
+        </member>
+    </members>
+</doc>

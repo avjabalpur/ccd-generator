@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF61A781-6EF2-48B9-B323-AEE6B2A51CAD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CCDGen</RootNamespace>
+    <AssemblyName>CCDGen</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MARC.Everest.RMIM.UV.CDAr2">
+      <HintPath>..\Solution Items\MARC.Everest.RMIM.UV.CDAr2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MARC.Everest.Formatters.XML.Datatypes.R1\MARC.Everest.Formatters.XML.Datatypes.R1.csproj">
+      <Project>{65af0627-c230-4618-8435-415301686563}</Project>
+      <Name>MARC.Everest.Formatters.XML.Datatypes.R1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MARC.Everest.Formatters.XML.Datatypes.R2\MARC.Everest.Formatters.XML.Datatypes.R2.csproj">
+      <Project>{128a7ba8-3779-4af2-8647-53013cbcd981}</Project>
+      <Name>MARC.Everest.Formatters.XML.Datatypes.R2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MARC.Everest.Formatters.XML.ITS1\MARC.Everest.Formatters.XML.ITS1.csproj">
+      <Project>{cc69a026-fb42-4c44-bdeb-8e956ac0e41a}</Project>
+      <Name>MARC.Everest.Formatters.XML.ITS1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MARC.Everest\MARC.Everest.csproj">
+      <Project>{283b7891-bf96-4c00-bf6d-955ee68bbfbb}</Project>
+      <Name>MARC.Everest</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\StaticCCDAData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

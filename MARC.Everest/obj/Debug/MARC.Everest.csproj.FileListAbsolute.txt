@@ -1,0 +1,8 @@
+D:\Work\poc\everest\MARC.Everest\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\MARC.Everest\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\MARC.Everest\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\MARC.Everest\obj\Debug\MARC.Everest.csprojAssemblyReference.cache
+D:\Work\poc\everest\MARC.Everest\obj\Debug\MARC.Everest.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest\obj\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest\obj\Debug\MARC.Everest.pdb

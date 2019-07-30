@@ -1,0 +1,17 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.COR.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.COR.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.xml
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.csprojAssemblyReference.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.csproj.CopyComplete
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Triggers.CorCollapser.pdb

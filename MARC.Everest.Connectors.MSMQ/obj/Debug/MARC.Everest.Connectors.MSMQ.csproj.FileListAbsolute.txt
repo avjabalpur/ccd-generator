@@ -1,0 +1,12 @@
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.Connectors.MSMQ.xml
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.Connectors.MSMQ.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.Connectors.MSMQ.pdb
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\obj\Debug\MARC.Everest.Connectors.MSMQ.csprojAssemblyReference.cache
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\obj\Debug\MARC.Everest.Connectors.MSMQ.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\obj\Debug\MARC.Everest.Connectors.MSMQ.csproj.CopyComplete
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\obj\Debug\MARC.Everest.Connectors.MSMQ.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.MSMQ\obj\Debug\MARC.Everest.Connectors.MSMQ.pdb

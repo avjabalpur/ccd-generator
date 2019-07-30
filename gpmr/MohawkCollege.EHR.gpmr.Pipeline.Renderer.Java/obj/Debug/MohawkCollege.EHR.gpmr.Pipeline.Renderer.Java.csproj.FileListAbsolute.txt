@@ -1,0 +1,16 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.COR.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.COR.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.xml
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\bin\Debug\MohawkCollege.EHR.gpmr.Pipeline.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.csprojAssemblyReference.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.Licenses.resources
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.Template.resources
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.csproj.GenerateResource.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.csproj.CopyComplete
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java\obj\Debug\MohawkCollege.EHR.gpmr.Pipeline.Renderer.Java.pdb

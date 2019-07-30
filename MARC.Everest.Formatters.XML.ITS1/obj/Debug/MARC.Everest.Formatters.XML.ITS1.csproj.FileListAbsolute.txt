@@ -1,0 +1,11 @@
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.Formatters.XML.ITS1.xml
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.Formatters.XML.ITS1.dll
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.Formatters.XML.ITS1.pdb
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\obj\Debug\MARC.Everest.Formatters.XML.ITS1.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\obj\Debug\MARC.Everest.Formatters.XML.ITS1.csproj.CopyComplete
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\obj\Debug\MARC.Everest.Formatters.XML.ITS1.dll
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.ITS1\obj\Debug\MARC.Everest.Formatters.XML.ITS1.pdb

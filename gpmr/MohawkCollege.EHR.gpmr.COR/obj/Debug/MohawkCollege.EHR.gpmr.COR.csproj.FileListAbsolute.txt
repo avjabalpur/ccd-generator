@@ -1,0 +1,8 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\bin\Debug\MohawkCollege.EHR.gpmr.COR.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\bin\Debug\MohawkCollege.EHR.gpmr.COR.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\obj\Debug\MohawkCollege.EHR.gpmr.COR.csprojAssemblyReference.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\obj\Debug\MohawkCollege.EHR.gpmr.COR.Properties.Resources.resources
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\obj\Debug\MohawkCollege.EHR.gpmr.COR.csproj.GenerateResource.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\obj\Debug\MohawkCollege.EHR.gpmr.COR.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\obj\Debug\MohawkCollege.EHR.gpmr.COR.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.EHR.gpmr.COR\obj\Debug\MohawkCollege.EHR.gpmr.COR.pdb

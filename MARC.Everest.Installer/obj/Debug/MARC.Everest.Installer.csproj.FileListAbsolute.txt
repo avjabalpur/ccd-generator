@@ -1,0 +1,6 @@
+D:\Work\poc\everest\MARC.Everest.Installer\bin\Debug\MARC.Everest.Installer.dll
+D:\Work\poc\everest\MARC.Everest.Installer\bin\Debug\MARC.Everest.Installer.pdb
+D:\Work\poc\everest\MARC.Everest.Installer\obj\Debug\MARC.Everest.Installer.csprojAssemblyReference.cache
+D:\Work\poc\everest\MARC.Everest.Installer\obj\Debug\MARC.Everest.Installer.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest.Installer\obj\Debug\MARC.Everest.Installer.dll
+D:\Work\poc\everest\MARC.Everest.Installer\obj\Debug\MARC.Everest.Installer.pdb

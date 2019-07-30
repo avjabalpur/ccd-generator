@@ -1,0 +1,6 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Parameters\bin\Debug\MohawkCollege.Util.Console.Parameters.XML
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Parameters\bin\Debug\MohawkCollege.Util.Console.Parameters.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Parameters\bin\Debug\MohawkCollege.Util.Console.Parameters.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Parameters\obj\Debug\MohawkCollege.Util.Console.Parameters.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Parameters\obj\Debug\MohawkCollege.Util.Console.Parameters.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Parameters\obj\Debug\MohawkCollege.Util.Console.Parameters.pdb

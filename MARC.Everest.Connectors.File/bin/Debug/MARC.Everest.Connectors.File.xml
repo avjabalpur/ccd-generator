@@ -1,0 +1,711 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MARC.Everest.Connectors.File</name>
+    </assembly>
+    <members>
+        <member name="T:MARC.Everest.Connectors.File.FileConnectionStringBuilder">
+            <summary>
+            Abstracts the creation of a connection string to be provided to a 
+            <see cref="T:MARC.Everest.Connectors.File.FileListenConnector"/> or
+            <see cref="T:MARC.Everest.Connectors.File.FilePublishConnector"/>
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.Directory">
+            <summary>
+            Specifies the directory to which files should be published or 
+            consumed.
+            </summary>
+            <remarks>
+            <para>When passed to a server connector, a file system watch 
+            will be placed on the directory.</para>
+            </remarks>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.KeepFiles">
+            <summary>
+            Identifies whether files should be kept after consumption
+            </summary>
+            <remarks>
+            Specifies whether or not the <see cref="T:MARC.Everest.Connectors.File.FileListenConnector"/>
+            should keep files after successfully formatting them from the disk
+            or should delete them after consumption. Default is false.
+            </remarks>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.Pattern">
+            <summary>
+            Identifies the file pattern to listen for.
+            </summary>
+            <remarks>A standard windows file pattern should be passed as this parameter. This 
+            modifies the behavior of the <see cref="T:MARC.Everest.Connectors.File.FileListenConnector"/></remarks>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.ProcessExisting">
+            <summary>
+            Identifies whether or not existing files in the subscribed directory should be processed
+            </summary>
+            <remarks>
+            When false, the <see cref="T:MARC.Everest.Connectors.File.FileListenConnector"/> will only
+            process new files that are placed into the directory.
+            </remarks>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.FileName">
+            <summary>
+            Identifies the name of the file to write
+            </summary>
+            <remarks>Instructs the <see cref="T:MARC.Everest.Connectors.File.FilePublishConnector"/> to write
+            all published messages to one file (overwriting files)</remarks>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.NamingConvention">
+            <summary>
+            Identifies the naming convention of new files created by the connector
+            </summary>
+            <remarks>
+            Identifies the naming function to call generate file names. The two 
+            naming conventions are Guid and message identifier
+            </remarks>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileConnectionStringBuilder.OverwriteExistingFiles">
+            <summary>
+            When true instructs the formatter to overwrite files
+            </summary>
+            <remarks>
+            When false, and an existing file is encountered the file is suffixed with 1,2,3... For example,
+            if the file name is File and File exists, the next publish will be to File1, followed by 
+            File2, File3
+            </remarks>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileConnectionStringBuilder.GenerateConnectionString">
+            <summary>
+            Generate connection string
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FileListenConnector">
+             <summary>
+             Listens to the file system and notifies applications when a new file is received from the
+             file system.
+             </summary>
+             <example>
+             <code lang="cs" title="Listen for new files in directory C:\Temp">
+             <![CDATA[
+            static void Main(string[] args)
+            {
+            
+                // Load the RMIM assembly we want to process
+                Assembly.Load(new AssemblyName("MARC.Everest.RMIM.UV.NE2008"));
+            
+                // Setup the connection string
+                FileConnectionStringBuilder csbuilder = new FileConnectionStringBuilder();
+                csbuilder.Directory = @"C:\temp";
+                csbuilder.KeepFiles = true;
+                csbuilder.Pattern = "*.xml";
+                csbuilder.ProcessExisting = false;
+            
+                // Setup the formatter
+                XmlIts1Formatter formatter = new XmlIts1Formatter()
+                {
+                    ValidateConformance = true
+                };
+                formatter.GraphAides.Add(new DatatypeFormatter()
+                {
+                    ValidateConformance = true
+                });
+            
+                // Setup the connector
+                FileListenConnector connector = new FileListenConnector(csbuilder.GenerateConnectionString());
+                connector.Formatter = formatter;
+            
+                // Subscribe
+                try
+                {
+                   
+                    // Open the connector
+                    connector.Open();
+            
+                    // Set the event handler for new messages
+                    connector.MessageAvailable += new EventHandler<UnsolicitedDataEventArgs>(connector_MessageAvailable);
+            
+                    // Start listening for messages
+                    connector.Start();
+            
+                    // Output a message
+                    Console.WriteLine("Listening for files, press any key to stop...");
+                    Console.ReadKey();
+                }
+                finally
+                {
+                    // Stop listening
+                    connector.Stop();
+            
+                    // Clean
+                    connector.Close();
+                    connector.Dispose();
+                }
+                
+            }
+            
+             /// <summary>
+             /// Message is available to be processed
+             /// </summary>
+            static void connector_MessageAvailable(object sender, UnsolicitedDataEventArgs e)
+            {
+                // Get the connector that raised the event
+                var connector = (IListenWaitConnector)sender;
+            
+                // Output the name of the file
+                Console.WriteLine("Received a message at '{0}'...", e.ReceiveEndpoint);
+            
+                // Process the message
+                IReceiveResult result = connector.Receive();
+            
+                // Output the type
+                if (result.Structure != null)
+                    Console.WriteLine("Structure type is '{0}'", result.Structure.GetType().Name);
+                else // Couldn't process, so output the errors
+                    foreach (var dtl in result.Details)
+                    {
+                        if (dtl.Type == ResultDetailType.Error)
+                            Console.WriteLine("\t{0}", dtl.Message);
+                    }
+            }
+             ]]>
+             </code>
+             </example>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.#ctor">
+            <summary>
+            Creates a new instance of the FileListenConnector
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the FileListenConnector with the specified connection string.
+            </summary>
+            <param name="connectionString">Dictates how the connector should subscribe to file system events (<see cref="P:MARC.Everest.Connectors.File.FileListenConnector.ConnectionString"/>).</param>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FileListenConnector.Worker">
+            <summary>
+            The worker class performs the deserialization of objects
+            </summary>
+        </member>
+        <member name="F:MARC.Everest.Connectors.File.FileListenConnector.Worker.WorkerId">
+            <summary>
+            The worker id - A GUID is used for the ID.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileListenConnector.Worker.Formatter">
+            <summary>
+            Gets or sets the formatter to use.
+            </summary>
+        </member>
+        <member name="E:MARC.Everest.Connectors.File.FileListenConnector.Worker.Completed">
+            <summary>
+            Fires when the operation is complete.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileListenConnector.Worker.Result">
+            <summary>
+            Gets or sets the result from the parsing.
+            </summary>
+        </member>
+        <member name="F:MARC.Everest.Connectors.File.FileListenConnector.Worker.retryCount">
+            <summary>
+            The number of retries performed.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Worker.Work(System.Object)">
+            <summary>
+            Parses the specified structure.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Finalize">
+            <summary>
+            Close the watcher
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileListenConnector.Formatter">
+            <summary>
+            Gets or sets the formatter that should be used for deserializing messages from the
+            file system.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileListenConnector.ConnectionString">
+            <summary>
+            Gets or sets the connection string that dictates how this file connector should receive events from the file system. Valid parameters are:
+            </summary>
+            <remarks>
+            <list type="table">
+            <listheader><term>Key</term><description>Description</description></listheader>
+                <item><term>Directory</term><description>The directory to listen to.</description></item>
+                <item><term>KeepFiles</term><description>If set to true, files will not be deleted when received (requires more memory).</description></item>
+                <item><term>Pattern</term><description>The file pattern to use.</description></item>
+                <item><term>ProcessExisting</term><description>True indicates the connector should process the files that already exist in the directory.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Open">
+            <summary>
+            Open a connection to the file system. ie: This is translated to opening a file system watcher.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.watcher_Created(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            Event handler that is fired when a new file matching the watcher's list was created on the file
+            system.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Close">
+            <summary>
+            Stop the file system watcher.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.IsOpen">
+            <summary>
+            Returns true if this connector is in an open state.
+            </summary>
+            <remarks>
+            This is not a property because in some formatters it does actually start a more complex
+            check
+            </remarks>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Start">
+            <summary>
+            Start the listening of the file system.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Stop">
+            <summary>
+            Stop listening on the file system.
+            </summary>
+        </member>
+        <member name="E:MARC.Everest.Connectors.File.FileListenConnector.MessageAvailable">
+            <summary>
+            Occurs when a new piece of data is received from the source.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Receive">
+             <summary>
+             Receive the message from the waiting received message queues.
+             </summary>
+             <example>
+             <code lang="cs" title="Perform a blocking receive">
+             <![CDATA[
+            using System;
+            using System.Collections.Generic;
+            using System.Linq;
+            using System.Text;
+            using MARC.Everest.DataTypes;
+            using MARC.Everest.Core.MR2009.Interactions;
+            using MARC.Everest.Core.MR2009.Vocabulary;
+            using System.IO;
+            using System.Xml;
+            using MARC.Everest.Connectors.File;
+            using MARC.Everest.Connectors;
+            using MARC.Everest.Formatters.XML.ITS1;
+            using MARC.Everest.Interfaces;
+            using System.Diagnostics;
+            using System.Reflection;
+            
+            namespace ExampleConnector
+            {
+                class Program
+                {
+                    public static IGraphable results;
+                    static void Main(string[] args)
+                    {
+                        try
+                        {
+                            
+                            // Loads the Assembly so it can be used right away        
+                            Assembly.Load(new AssemblyName("MARC.Everest.Core.MR2009"));
+                            
+                            // Creates the formatter
+                            Formatter its1Formatter = new Formatter();
+                            its1Formatter.GraphAides.Add(
+                                typeof(
+                                    MARC.Everest.Formatters.XML.Datatypes.R1.Formatter
+                                )
+                            );    
+                           
+                            // Create an instance of the connector
+                            FileListenConnector connector = new FileListenConnector(@"Directory=C:\work3;KeepFiles=False");
+                            
+                            // Guarantees  that the generated instances will be valid against the conformance statements 
+                            // in the RMIM object.
+                            its1Formatter.ValidateConformance = false;
+                           
+                            
+                            connector.Formatter = its1Formatter;
+                            connector.Open();
+                            connector.Start();
+                           
+                            // Wait until a file is available
+                            IReceiveResult result = connector.Receive();
+                            // Process the file  
+                            results = result.Structure;
+                            
+            
+                            its1Formatter.GraphObject(Console.OpenStandardOutput(), results);
+                            // Close connector
+                            connector.Close();
+            
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message + "\r\n" + e.StackTrace);
+                       }
+            
+                        Console.ReadKey();            
+                    }
+                }
+            }
+             ]]>
+             </code>
+             </example>
+             <exception cref="T:System.Xml.XmlException"/>
+             <exception cref="T:MARC.Everest.Exceptions.ConnectorException"/>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.BeginReceive(System.AsyncCallback,System.Object)">
+            <summary>
+            Start an asychronous receive of the data from the receive queue.
+            <para>
+            This method may perform better than a Receive() method used in the MessageAvailable delegate as it spawns a new
+            thread to perform the parsing of the object.
+            </para>
+            </summary>
+            <example>
+            Perform an asynchronous receive
+            <code>
+            FileListenConnector conn = new FileListenConnector();
+            conn.Formatter = new MARC.Everest.Formatters.XML.ITS1.Formatter();
+            conn.Open("Directory=C:\\temp;Pattern=*");
+            conn.Start();
+            // Message available is fired when a new message is received from the server
+            conn.MessageAvailable += new EventHandler&lt;UnsolicitedDataEventArgs&gt;(delegate(object sender, UnsolicitedDataEventArgs evt)
+            {
+               // Process the message
+               IAsyncResult receiveResult = conn.BeginReceive(null, null);
+               receiveResult.AsyncWaitHandle.WaitOne();
+               IReceiveResult result = conn.EndReceive(receiveResult);
+               Console.WriteLine("Received a message with {0} conformance...", result.Code);
+            });
+            Console.WriteLine("Press any key to stop...");
+            Console.ReadKey();
+            conn.Close();
+            </code>        
+            </example>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.EndReceive(System.IAsyncResult)">
+            <summary>
+            Retrieve the result of the async receive operation
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileListenConnector.HasData">
+            <summary>
+            Returns true if the connector has data waiting
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileListenConnector.Dispose">
+            <summary>
+            Dispose the object
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FileNamingConventionType">
+            <summary>
+            Identifies the types of file naming conventions that can be used
+            for generating files with the file connectors
+            </summary>
+        </member>
+        <member name="F:MARC.Everest.Connectors.File.FileNamingConventionType.Guid">
+            <summary>
+            The naming convention should be a globally unique identifier
+            </summary>
+        </member>
+        <member name="F:MARC.Everest.Connectors.File.FileNamingConventionType.Id">
+            <summary>
+            The naming convention should be based on the message's ID 
+            element
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FileResultDetail">
+            <summary>
+            Represents a datatype result detail.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileResultDetail.Type">
+            <summary>
+            Gets the type of result detail.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileResultDetail.Message">
+            <summary>
+            Gets the message of the detail.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileResultDetail.Exception">
+            <summary>
+            Gets an exception if one occured. This value will be null if no exception was thrown.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileResultDetail.Location">
+            <summary>
+            Location of the error
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FileResultDetail.#ctor(MARC.Everest.Connectors.ResultDetailType,System.String,System.String,System.Exception)">
+            <summary>
+            Create a new instance of the datatype result detail.
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FilePublishConnector">
+             <summary>
+             Allows developers to send messages to a FILE based transport.
+             </summary>
+             <example>
+             <code lang="cs" title="Publishing a message to a directory">
+             <![CDATA[
+             // Setup the connection string
+            FileConnectionStringBuilder csbuilder = new FileConnectionStringBuilder();
+            csbuilder.NamingConvention = FileNamingConventionType.Guid;
+            csbuilder.Directory = @"C:\temp";
+            csbuilder.OverwriteExistingFiles = false;
+            
+             // Setup the formatter
+            XmlIts1Formatter formatter = new XmlIts1Formatter()
+            {
+                ValidateConformance = false
+            };
+            formatter.GraphAides.Add(new DatatypeFormatter()
+            {
+                CompatibilityMode = DatatypeFormatterCompatibilityMode.Universal,
+                ValidateConformance = false
+            });
+            
+             // Setup the connector
+            FilePublishConnector connector = new FilePublishConnector(csbuilder.GenerateConnectionString());
+            connector.Formatter = formatter;
+            
+             // Publish
+            try
+            {
+               
+                // Open the connector
+                connector.Open();
+            
+                // Output 10 files
+                for (int i = 0; i < 10; i++)
+                {
+                    // Create an instance
+                    MCCI_IN000002UV01 instance = new MCCI_IN000002UV01(
+                        Guid.NewGuid(),
+                        DateTime.Now,
+                        MCCI_IN000002UV01.GetInteractionId(),
+                        ProcessingID.Training,
+                        "T"
+                    );
+            
+                    // Send the instance
+                    connector.Send(instance);
+                }
+            }
+            finally
+            {
+                // Clean
+                connector.Close();
+                connector.Dispose();
+            }
+             ]]>
+             </code>
+             </example>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.#ctor">
+            <summary>
+            Creates a new instance of the FilePublishConnector.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the FilePublishConnector with the specified connection string.
+            </summary>
+            <param name="connectionString">The connection string that dictates how to publish files (<see cref="P:MARC.Everest.Connectors.File.FilePublishConnector.ConnectionString"/>).</param>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FilePublishConnector.NamingFunctiod">
+            <summary>
+            Identifies a naming function.
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FilePublishConnector.Worker">
+            <summary>
+            The worker class is used internally by the connector to format results. The purpose of having a separate
+            worker class is reuse among the synchronous and asynchronous send methods.
+            </summary>
+        </member>
+        <member name="F:MARC.Everest.Connectors.File.FilePublishConnector.Worker.WorkerId">
+            <summary>
+            The worker id
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FilePublishConnector.Worker.Formatter">
+            <summary>
+            Gets or sets the formatter to use
+            </summary>
+        </member>
+        <member name="E:MARC.Everest.Connectors.File.FilePublishConnector.Worker.Completed">
+            <summary>
+            Occurs when the operation is complete
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FilePublishConnector.Worker.TargetFile">
+            <summary>
+            Gets or sets the target file name
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FilePublishConnector.Worker.Result">
+            <summary>
+            Gets or sets the result of the formatting operation performed by the formatter
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.Worker.Work(System.Object)">
+            <summary>
+            Starts the worker's working process. This work function is responsible for formatting 
+            and sending the object.
+            </summary>
+            <param name="state">The message that is to be sent.</param>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.GenerateTargetFile(MARC.Everest.Interfaces.IGraphable)">
+            <summary>
+            Generates a filename for the given data.
+            </summary>
+            <returns>A filename which is not already present in the target directory and represents the data in some way.</returns>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.Send(MARC.Everest.Interfaces.IGraphable)">
+            <summary>
+            Send the structure <paramref name="data"/> to the file system.
+            </summary>
+            <param name="data">The <see cref="T:MARC.Everest.Interfaces.IGraphable"/> data to be sent.</param>
+            <returns>The result of the send operation.</returns>
+            <example>
+            Get the result of a send operation
+            <code>
+            FileSendResult result = conn.Send(instance);
+            if(result.Code != ResultCode.Accepted) // Result was not successful
+                foreach(IResultDetail dtl in result.Details)
+                    Console.WriteLine(dtl.Message);
+                    </code>
+            </example>
+            <seealso cref="M:MARC.Everest.Connectors.File.FilePublishConnector.BeginSend(MARC.Everest.Interfaces.IGraphable,System.AsyncCallback,System.Object)"/>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.BeginSend(MARC.Everest.Interfaces.IGraphable,System.AsyncCallback,System.Object)">
+            <summary>
+            Starts an asynchronous send to the file system.
+            </summary>
+            <param name="data">The <see cref="T:MARC.Everest.Interfaces.IGraphable"/> data to be sent.</param>
+            <param name="callback">The callback to execute when the send is complete.</param>
+            <param name="state">An object representing state.</param>
+            <returns>An instance of a callback pointer.</returns>
+            <example>
+            Sending an instance asynchronously using a wait handle
+            <code>
+            IAsyncResult sendResult = conn.BeginSend(instance, null, null);
+            sendResult.AsyncWaitHandle.WaitOne(); // Wait for send to finish
+            FileSendResult result = conn.EndSend(sendResult);
+            if(result.Code != ResultCode.Accepted) // Result was not successful
+                foreach(IResultDetail dtl in result.Details)
+                    Console.WriteLine(dtl.Message);
+            </code>
+            </example>
+            <seealso cref="M:MARC.Everest.Connectors.File.FilePublishConnector.Send(MARC.Everest.Interfaces.IGraphable)"/>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.EndSend(System.IAsyncResult)">
+            <summary>
+            Finishes an asynchronous send operation and retreive the result of the send.
+            </summary>
+            <param name="asyncResult">The instance of the callback pointer.</param>
+            <returns>The result of the send operation.</returns>
+            <example cref="M:MARC.Everest.Connectors.File.FilePublishConnector.BeginSend(MARC.Everest.Interfaces.IGraphable,System.AsyncCallback,System.Object)">
+            </example>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FilePublishConnector.ConnectionString">
+            <summary>
+            Gets or sets the connection string. 
+            </summary>
+            <remarks>
+            Valid parameters are:
+            <list>
+            <listheader><term>Key</term><description>Description</description></listheader>
+            <item><term>directory</term><description>The directory to publish files to.</description></item>
+            <item><term>file</term><description>The name of the file to publish to.</description></item>
+            <item><term>namer</term><description>Naming convention.</description></item>
+            <item><term>overwrite</term><description>True if files should be overwritten.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.Open">
+            <summary>
+            "Open" a connection to the file system. This doesn't actually open any file 
+            handles, however it verifies the directory. 
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.Close">
+            <summary>
+            Close the file connection.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.IsOpen">
+            <summary>
+            Returns true if the file connection has been verified (ie: opened).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FilePublishConnector.Formatter">
+            <summary>
+            Gets or sets the <see cref="T:MARC.Everest.Connectors.IStructureFormatter"/> to use for sending messages to the file system.
+            </summary>
+        </member>
+        <member name="M:MARC.Everest.Connectors.File.FilePublishConnector.Dispose">
+            <summary>
+            Dispose the object
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FileSendResult">
+             <summary>
+            Represents a result from a file publish operation.
+             </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileSendResult.Code">
+            <summary>
+            Gets the status code that is returned as part of the formatting operation. 
+            If the code is rejected, no file will be written to disk.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileSendResult.Details">
+            <summary>
+            Gets the details of the operation. If the Code is not Accepted, this property will contain at least one 
+            error level detail item describing the nature of the error.
+            </summary>
+        </member>
+        <member name="T:MARC.Everest.Connectors.File.FileReceiveResult">
+            <summary>
+            Represents a receive result from a file connector.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileReceiveResult.Code">
+            <summary>
+            Gets the code of the result.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileReceiveResult.Details">
+            <summary>
+            Gets the details of how the code of the result was attained.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileReceiveResult.Structure">
+            <summary>
+            Gets the data for the result.
+            </summary>
+        </member>
+        <member name="P:MARC.Everest.Connectors.File.FileReceiveResult.FileName">
+            <summary>
+            Gets the name of the file .
+            </summary>
+        </member>
+    </members>
+</doc>

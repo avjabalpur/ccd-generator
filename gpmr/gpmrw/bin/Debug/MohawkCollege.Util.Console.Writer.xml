@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MohawkCollege.Util.Console.Writer</name>
+    </assembly>
+    <members>
+        <member name="T:MohawkCollege.Util.Console.MessageWriter.MessageWriter">
+            <summary>
+            The message writer class is responsible for writing data to 
+            a source based on the verbosity setting of the message.
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.#ctor">
+            <summary>
+            Public constructor 
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.Util.Console.MessageWriter.MessageWriter.MessageCount">
+            <summary>
+            The number of messages written to the listener
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType">
+            <summary>
+            Verbosity levels
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType.Fatal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType.Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType.Warn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType.Debug">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType.Information">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.Util.Console.MessageWriter.MessageWriter.Verbosity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.#ctor(System.IO.TextWriter,MohawkCollege.Util.Console.MessageWriter.MessageWriter.VerbosityType)">
+            <summary>
+            Create a new instance of the MessageWriter class
+            </summary>
+            <param name="tw">The textwriter to write messages to</param>
+            <param name="Verbosity">The verbosity level of the writer</param>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.Print(System.Exception)">
+            <summary>
+            Print a message to the writer
+            </summary>
+            <param name="e">An exception to write</param>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.Warn(System.String)">
+            <summary>
+            Write a warning to the message
+            </summary>
+            <param name="s">The message to write</param>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.Print(System.String)">
+            <summary>
+            Print a debug message to the writer
+            </summary>
+            <param name="s">The string to write</param>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.Write(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:MohawkCollege.Util.Console.MessageWriter.MessageWriter.WriteLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+    </members>
+</doc>

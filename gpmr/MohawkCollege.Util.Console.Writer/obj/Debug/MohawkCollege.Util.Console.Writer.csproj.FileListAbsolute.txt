@@ -1,0 +1,8 @@
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\bin\Debug\MohawkCollege.Util.Console.Writer.dll.config
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\bin\Debug\MohawkCollege.Util.Console.Writer.XML
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\bin\Debug\MohawkCollege.Util.Console.Writer.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\bin\Debug\MohawkCollege.Util.Console.Writer.pdb
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\obj\Debug\MohawkCollege.Util.Console.Writer.csprojAssemblyReference.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\obj\Debug\MohawkCollege.Util.Console.Writer.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\obj\Debug\MohawkCollege.Util.Console.Writer.dll
+D:\Work\poc\everest\gpmr\MohawkCollege.Util.Console.Writer\obj\Debug\MohawkCollege.Util.Console.Writer.pdb

@@ -1,0 +1,12 @@
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.Connectors.WCF.xml
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.Connectors.WCF.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.Connectors.WCF.pdb
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\obj\Debug\MARC.Everest.Connectors.WCF.csprojAssemblyReference.cache
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\obj\Debug\MARC.Everest.Connectors.WCF.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\obj\Debug\MARC.Everest.Connectors.WCF.csproj.CopyComplete
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\obj\Debug\MARC.Everest.Connectors.WCF.dll
+D:\Work\poc\everest\MARC.Everest.Connectors.WCF\obj\Debug\MARC.Everest.Connectors.WCF.pdb

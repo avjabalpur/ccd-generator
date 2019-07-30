@@ -1,0 +1,680 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MohawkCollege.EHR.gpmr.Pipeline.Compiler</name>
+    </assembly>
+    <members>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.ICompiler.ClassRepository">
+            <summary>
+            The class repository that this compiler is placing its classes in
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.ICompiler.Compile">
+            <summary>
+            Compile this item
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IModelElementCompiler">
+            <summary>
+            Used for compiling different types of model elements
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IModelElementCompiler.DerivationSuppliers">
+            <summary>
+            The derivation suppliers from the package
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IModelElementCompiler.ModelType">
+            <summary>
+            Gets the type of model this compiler will compile
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IModelElementCompiler.TargetPackage">
+            <summary>
+            Get the package that will contain this class
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IModelElementCompiler.ModelElement">
+            <summary>
+            Get or set the target of compilation
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IModelElementCompiler.DefinitionPackage">
+            <summary>
+            Get or set the package that owns this model element
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IPackageCompiler">
+            <summary>
+            The ICompiler interface defines a standard method of defining a compiler utility class
+            that transforms a MIF format file to the CR representation
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IPackageCompiler.PackageType">
+            <summary>
+            The name of the model type that this class handles
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IPackageCompiler.Package">
+            <summary>
+            The package this compiler is going to transform
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.IPackageCompiler.PackageRepository">
+            <summary>
+            Get or set the package repository
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler">
+            <summary>
+            Summary of InteractionCompiler
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.PackageType">
+            <summary>
+            The type of package that this compiler processes
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.Package">
+            <summary>
+            Sets the package that this compiler will process
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.PackageRepository">
+            <summary>
+            Gets or sets the MIF package repository
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.ClassRepository">
+            <summary>
+            Get or set the compiled class repository
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.Compile">
+            <summary>
+            Compile the package
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.AppendTraversalName(MohawkCollege.EHR.gpmr.COR.TypeReference,System.String,System.String,MohawkCollege.EHR.gpmr.COR.TypeReference,MohawkCollege.EHR.gpmr.COR.Interaction,System.Collections.Generic.Stack{System.String})">
+            <summary>
+            Append the traversal name to the list of alternate traversal names on all properties within the 
+            class <paramref name="ClassRef"/>.
+            </summary>
+            <param name="ClassRef">The class to append a traversal to</param>
+            <param name="ParameterName">The name of the type parameter to append traversal names to</param>
+            <param name="TraversalName">The traversal name</param>
+            <param name="CaseWhen">When the traversal name should be applied</param>
+            <param name="InteractionOwner"></param>        
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.ProcessTypeParameters(System.Collections.Generic.List{MohawkCollege.EHR.HL7v3.MIF.MIF20.DynamicModel.ParameterModel},MohawkCollege.EHR.gpmr.COR.TypeReference,MohawkCollege.EHR.gpmr.COR.Interaction)">
+            <summary>
+            Process type parameters and create a type reference
+            </summary>
+            <param name="parms">The parameter models to process</param>
+            <param name="baseRef">The type reference to add to</param>
+            <param name="ownerInteraction"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.InteractionCompiler.ProcessSpecializations(MohawkCollege.EHR.HL7v3.MIF.MIF20.DynamicModel.ParameterModel,System.Collections.Generic.List{MohawkCollege.EHR.HL7v3.MIF.MIF20.AssociationEndSpecialization},MohawkCollege.EHR.gpmr.COR.TypeReference,MohawkCollege.EHR.gpmr.COR.Interaction,MohawkCollege.EHR.gpmr.COR.TypeReference)">
+            <summary>
+            Process specializations
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.RepositoryCompiler">
+            <summary>
+            Responsible for converting a repository of MIF structures to a repository of COR structures
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.RepositoryCompiler.ClassRepository">
+            <summary>
+            Get or set the class repository that results from this compilation
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.RepositoryCompiler.#ctor(MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Create a new instance of the repository compiler
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.RepositoryCompiler.Compile">
+            <summary>
+            Compile the source package repository passed by parameter into a COR repository
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler">
+            <summary>
+            Serialized static model compiler
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.PackageType">
+            <summary>
+            Gets the type of package that this compiler can handle
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.Package">
+            <summary>
+            Set the package. All this compiler really does is converts the serialized static model
+            to a static model
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.CreateFlatModelElement(MohawkCollege.EHR.HL7v3.MIF.MIF20.ModelElement,MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.GlobalStaticModel)">
+            <summary>
+            Create a class element
+            </summary>
+            <param name="modelElement"></param>
+            <param name="gsm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.CreateFlatCMETRef(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Serialized.SerializedCommonModelElementRef,MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.GlobalStaticModel)">
+            <summary>
+            Create a flat CMET Ref
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.CreateFlatClass(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Serialized.SerializedClass,MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.GlobalStaticModel)">
+            <summary>
+            Create a flat class from a serialized class
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.CreateFlatAssociations(System.Collections.Generic.List{MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Serialized.SerializedAssociationEnd},MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.GlobalStaticModel)">
+            <summary>
+            Create flat associations from the serialized models
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.CreateSpecializationChildren(System.Collections.Generic.List{MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Serialized.SerializedClassGeneralization},MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.GlobalStaticModel)">
+            <summary>
+            Create specialization children
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.SerializedStaticModelCompiler.Compile">
+            <summary>
+            Compile the serialized static model
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticInterfaceCompiler">
+            <summary>
+            Summary of StaticInterfaceCompiler
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticInterfaceCompiler.PackageType">
+            <summary>
+            The type of package this compiler will process
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticInterfaceCompiler.Package">
+            <summary>
+            Set the package that is being processed
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticInterfaceCompiler.PackageRepository">
+            <summary>
+            The package repository being processed
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticInterfaceCompiler.ClassRepository">
+            <summary>
+            The class repository that contains all of the compiled COR classes
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticInterfaceCompiler.Compile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler">
+            <summary>
+            The static model compiler is responsible for the parsing and compilation of MIF2.0 static models into 
+            the common object representation (COR) format for later translation into any one of the formats 
+            supported by an available renderer.
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.staticModel">
+            <summary>
+            The static model that we are compiling into the COR format
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.PackageType">
+            <summary>
+            Get the type of package that this compiler can compile
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.Package">
+            <summary>
+            Get or set the package that is to be compiled
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.PackageRepository">
+            <summary>
+            Get or set the package repository that this compiler will read data from
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.ClassRepository">
+            <summary>
+            Get or set the class repository in COR that this compiler will publish any class results to
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.Compile">
+            <summary>
+            Compile the actual package item
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.CascadeGenerics(MohawkCollege.EHR.gpmr.COR.Class,System.Collections.Generic.Stack{System.String})">
+            <summary>
+            Cascade generic parameters to the class if any of the properties are concrete classes
+            that require a generic parameter
+            </summary>
+            <param name="cls">The class to propegate to</param>
+            <param name="CurrentlyProcessing"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.CreateTypeReference(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.AssociationEnd,MohawkCollege.EHR.gpmr.COR.ClassContent)">
+            <summary>
+            Create a type reference from an association end
+            </summary>
+            <param name="ae"></param>
+            <param name="cc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.ParseAssociation(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.Association,System.Collections.Generic.Dictionary{System.String,MohawkCollege.EHR.HL7v3.MIF.MIF20.Package})">
+            <summary>
+            Parse a static model association end
+            </summary>
+            <param name="asc">The association end to parse</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelCompiler.ProcessAssociations(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.AssociationEnd,System.Collections.Generic.List{MohawkCollege.EHR.HL7v3.MIF.MIF20.AssociationEndSpecialization},MohawkCollege.EHR.gpmr.COR.TypeReference,MohawkCollege.EHR.gpmr.COR.Choice)">
+            <summary>
+            Process Associations
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.StaticModelInterfaceCompiler">
+            <summary>
+            The StaticModelInterfaceCompiler class is responsible for the parsing of CMET models 
+            from MIF 2.0 format into a set of COR Classes
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.VocabularyModelCompiler">
+            <summary>
+            Summary of VocabularyModelCompiler
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.VocabularyModelCompiler.PackageType">
+            <summary>
+            Gets the type of package this compiler is responsible for compiling
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.VocabularyModelCompiler.Package">
+            <summary>
+            Set the package (model) that will be compiled
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.VocabularyModelCompiler.PackageRepository">
+            <summary>
+            Get or set the repository that the package belongs to
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.VocabularyModelCompiler.ClassRepository">
+            <summary>
+            Get or set the class repository that the compiled COR classes will be placed into
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Compilers.VocabularyModelCompiler.Compile">
+            <summary>
+            Compile the vocabulary model
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser">
+            <summary>
+            Responsible for parsing MIF 2.0 class structures into the corresponding COR class structures
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo">
+            <summary>
+            Contains data required for the processing of a MIF 2.0 class into a COR class.
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo.Class">
+            <summary>
+            The class that is being processed
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo.DerivationSuppliers">
+            <summary>
+            Derivation suppliers to be used in this class conversion process
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo.ScopedPackageName">
+            <summary>
+            The name of the MIF 2.0 package this class belongs to
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo.CompilerRepository">
+            <summary>
+            The class repository currently being constructed. Indicates where compiled sub-classes should be placed
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo.MifContainer">
+            <summary>
+            The MIF package being parsed
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo.EnforcedBaseClass">
+            <summary>
+            Forces the type to have this base class
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.ClassBase,System.String,MohawkCollege.EHR.gpmr.COR.ClassRepository,System.Collections.Generic.Dictionary{System.String,MohawkCollege.EHR.HL7v3.MIF.MIF20.Package})">
+            <summary>
+            Parses common class base data from the MIF 2.0 structure
+            </summary>
+            <param name="cls">The classbase to parse</param>
+            <param name="vocabularyBindingRealm">The vocabulary binding realm that all suppliant codes are bound with</param>
+            <returns>A parsed COR class object</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.Parse(MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.ClassParser.ClassParameterInfo)">
+            <summary>
+            Parse a MIF 2.0 class element into COR representation class
+            </summary>
+            <param name="classInfo">The class info structure to parse</param>
+            <returns>The compiled COR representation of the class</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.CommonTypeReferenceParser">
+            <summary>
+            Summary of CommonTypeReferenceParser
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.CommonTypeReferenceParser.#ctor">
+            <summary>
+            Private constructor so the compiler will not create a default one for this class.
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.CommonTypeReferenceParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Interfaces.CommonModelElement,MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Parse a MIF common model element into a CORE common type reference
+            </summary>
+            <param name="cme">The common model element to parse</param>
+            /// <param name="memberOf"></param>
+            <returns>The COR representation</returns>        
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.CommonTypeReferenceParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Interfaces.StubDefinition,MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Parse the specified stub as a common model element reference
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.DocumentationParser">
+            <summary>
+            Parses a mif 2.0 documentation structure into a COR documentation structure
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.DocumentationParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Documentation)">
+            <summary>
+            Parse a document object from an annotation
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.DocumentationParser.CleanHtml(System.Xml.XmlNode)">
+            <summary>
+            Cleans the HTML
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.DocumentationParser.ParseAddPrefix(System.String,MohawkCollege.EHR.HL7v3.MIF.MIF20.Documentation)">
+            <summary>
+            Parse the documentation and add a prefix
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser">
+            <summary>
+            Summary of EnumerationParser
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.LiteralComparer.Equals(MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue,MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue)">
+            <summary>
+            Equals
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.LiteralComparer.GetHashCode(MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue)">
+            <summary>
+            Get hash code of an object
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.ConceptDomain,MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.GlobalVocabularyModel,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository,MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Parse a MIF Concept domain into a COR enumeration
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.ProcessCombinedContent(MohawkCollege.EHR.gpmr.COR.Enumeration,MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.CombinedContentDefinition,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository,System.String,System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.FilterExpression})">
+            <summary>
+            Process the combined content
+            </summary>
+            <param name="cd">The combined content</param>
+            <param name="classRepository">Repository of Classes</param>
+            <param name="packageRep">Reference of all packages loaded into memory</param>
+            <returns></returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.ProcessContentDefinition(MohawkCollege.EHR.gpmr.COR.Operator,MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.ContentDefinition,MohawkCollege.EHR.gpmr.COR.Enumeration,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository,System.String,System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.FilterExpression})">
+            <summary>
+            Process content definition
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.GetOrParseCodeSystem(System.String,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Get or parse a code system
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.ProcessRelatedCodes(MohawkCollege.EHR.gpmr.COR.Enumeration,MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue,MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.IncludeRelatedCodes,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Process related codes
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.ValueSet,MohawkCollege.EHR.gpmr.COR.Enumeration,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.GlobalVocabularyModel)">
+            <summary>
+            Parse a MIF value set and update <paramref name="enumeration"/> where necessary
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.CodeSystem,MohawkCollege.EHR.gpmr.COR.Enumeration,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Vocabulary.GlobalVocabularyModel)">
+            <summary>
+            Parse the code system and update <paramref name="enumeration"/> where necessary
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.BuildCodeSystemGarbagePail(System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue},System.Collections.Generic.List{MohawkCollege.EHR.gpmr.COR.Enumeration.EnumerationValue})">
+            <summary>
+            Builds a garbage pail of literals that should be removed from the enumeration
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.GetOrParseValueSetByName(System.String,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Get or parse a value set
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.GetOrParseCodeSystemByName(System.String,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Get or parse a code system
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.EnumerationParser.GetOrParseConceptDomainByName(System.String,MohawkCollege.EHR.gpmr.COR.ClassRepository,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Get or parse concept domain
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.PackageParser">
+            <summary>
+            Summary of PackageParser
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.PackageParser.Parse(System.String,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository,MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Parse a package based on its name
+            </summary>
+            <param name="PackageName">The name of the package to parse</param>
+            <param name="mifRepo">The MIF repository</param>
+            <param name="repo">The class repository to store classes in</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.PackageParser.ParseClassFromPackage(System.String,MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository,MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Parse a package based on the class that is in that package
+            </summary>
+            <param name="ClassName">Full name of the class</param>
+            <param name="mifRepo">The MIF repository</param>
+            <param name="repo">The class repository to store classes in</param>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.PropertyParser">
+            <summary>
+            The property parser is responsible for the parsing of MIF 2.0 class attribute structures into 
+            COR Property structures
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.PropertyParser.#ctor">
+            <summary>
+            Private constructor so the compiler will not create a default one for this class.
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.PropertyParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.ClassAttribute,System.String,MohawkCollege.EHR.gpmr.COR.ClassRepository,System.Collections.Generic.Dictionary{System.String,MohawkCollege.EHR.HL7v3.MIF.MIF20.Package})">
+            <summary>
+            Parse the class attribute into a COR property class
+            </summary>
+            <param name="clsa">The class attribute to parse</param>
+            <param name="vocabBindingRealm">The vocabulary realm that this is bound to</param>
+            <returns>The parsed class attribute</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.StateMachineParser">
+            <summary>
+            Summary of StateMachineParser
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.StateMachineParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.StateMachine)">
+            <summary>
+            Parse a COR state machine from a MIF state machine
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.StateMachineParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Transition,System.Collections.Generic.Dictionary{System.String,MohawkCollege.EHR.gpmr.COR.State})">
+            <summary>
+            Parse a COR state transition from a MIF 2.0 state transition
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.StateMachineParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.State)">
+            <summary>
+            Parse a COR state that belongs to a state machine from a MIF 2.0 state 
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.SubsystemParser">
+            <summary>
+            Responsible for parsing a package into a subsystem
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.SubsystemParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.Package)">
+            <summary>
+            Template class that parses any package object into a subsytem object   
+            </summary>
+            <param name="p">The package to parse</param>
+            <returns>An empty subsystem object</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.SubsystemParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.Flat.GlobalStaticModel)">
+            <summary>
+            Parse a package into a COR subsystem object
+            </summary>
+            <param name="p">The package to parse</param>
+            <returns>The subsystem that is parsed</returns>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.SubsystemParser.UpdateLegalInfo(MohawkCollege.EHR.gpmr.COR.Documentation,MohawkCollege.EHR.HL7v3.MIF.MIF20.Header)">
+            <summary>
+            Update legalization information
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeParameterParser">
+            <summary>
+            Responsible for parsing template parameters from the MIF structures into a TypeParameter that 
+            can be used by classes to mimic generics
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeParameterParser.#ctor">
+            <summary>
+            Private constructor so the compiler will not create a default one for this class.
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeParameterParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.StaticModel.StaticModelClassTemplateParameter)">
+            <summary>
+            Parses a StaticModelClassTemplateParameter into a COR type parameter
+            </summary>
+            <param name="parm">The static mode template parameter to parse from the MIF</param>
+            <returns>The compiled type parameter</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeReferenceParser">
+            <summary>
+            Parses a datatype reference (for use in CMETS) from MIF 1.0 datatype refs into an actual type reference in COR
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeReferenceParser.#ctor">
+            <summary>
+            Private constructor so the compiler will not create a default one for this class.
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeReferenceParser.Parse(MohawkCollege.EHR.HL7v3.MIF.MIF20.DatatypeRef)">
+            <summary>
+            Parse a datatype reference into a type refernce
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.Mif20.Parsers.TypeReferenceParser.Parse(System.String)">
+            <summary>
+            Parse a type reference from a string
+            </summary>
+            <param name="p">The string to parse</param>
+            <returns>The processed type parameter</returns>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler">
+            <summary>
+            This class is responsible for converting the MIF1.0/2.0 Structured data from the MIF repository
+            to the internal common representation of the MIF
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.hostContext">
+            <summary>
+            The pipeline this component is running in
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.cmetBindings">
+            <summary>
+            Bindings for the CMET
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.Language">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.NAME_FORMAT">
+            <summary>
+            Format for package locations : sd_Air = RE PC _ IN 000076 CA
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.CompileMif(MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository,MohawkCollege.EHR.gpmr.COR.ClassRepository)">
+            <summary>
+            Compile MIF 2.0 Repository <paramref name="pkr"/> adding the contents to class repository
+            <paramref name="rep"/>
+            </summary>
+            <param name="pkr">The MIF 2.0 repository to compile</param>
+            <param name="rep">The repository to add to</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.CompileMif(MohawkCollege.EHR.HL7v3.MIF.MIF20.Repository.PackageRepository)">
+            <summary>
+            Compile MIF 2.0 repository <paramref name="pkr"/> into the common object represntation (COR) format
+            </summary>
+            <param name="pkr">The MIF2.0 package repository to compile</param>
+            <returns>A ClassRepository representating the MIF classes in COR format</returns>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.ExecutionOrder">
+            <summary>
+            This compiler should run first, so this returns -1
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.ComponentType">
+            <summary>
+            This is a compiler so it returns a compiler component type
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.Init(MohawkCollege.EHR.gpmr.Pipeline.Pipeline)">
+            <summary>
+            
+            </summary>
+            <param name="Context"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Compiler.MifCompiler.Execute">
+            <summary>
+            Execute this pipeline object
+            </summary>
+        </member>
+    </members>
+</doc>

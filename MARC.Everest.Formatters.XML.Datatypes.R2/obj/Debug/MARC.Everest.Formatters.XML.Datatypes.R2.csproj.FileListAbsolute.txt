@@ -1,0 +1,11 @@
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.XML
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.dll
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.pdb
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.dll
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.pdb
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.xml
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\bin\Debug\MARC.Everest.dll.config
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\obj\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.csproj.CoreCompileInputs.cache
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\obj\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.csproj.CopyComplete
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\obj\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.dll
+D:\Work\poc\everest\MARC.Everest.Formatters.XML.Datatypes.R2\obj\Debug\MARC.Everest.Formatters.XML.Datatypes.R2.pdb

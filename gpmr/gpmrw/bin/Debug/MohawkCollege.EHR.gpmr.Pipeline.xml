@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MohawkCollege.EHR.gpmr.Pipeline</name>
+    </assembly>
+    <members>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.IPipelineComponent">
+            <summary>
+            The pipeline component interface defines a standard framework that all pipeline components 
+            must implement to be executed in a renderer pipeline
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.IPipelineComponent.ExecutionOrder">
+            <summary>
+            Defines the order that this pipeline component should be executed in the pipeline amongst 
+            its peer types.
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.IPipelineComponent.ComponentType">
+            <summary>
+            Gets the type of component
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.IPipelineComponent.Init(MohawkCollege.EHR.gpmr.Pipeline.Pipeline)">
+            <summary>
+            Initializes this pipeline component
+            </summary>
+            <param name="Context">The pipeline that this component will be executing in</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.IPipelineComponent.Execute">
+            <summary>
+            Called when the pipeline component is executed
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.IPipelineTrigger">
+            <summary>
+            A Pipeline trigger listens to a pipeline object and awaits for state changes before determining a course
+            of action
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.IPipelineTrigger.Init(MohawkCollege.EHR.gpmr.Pipeline.Pipeline)">
+            <summary>
+            Initialize the trigger
+            </summary>
+            <param name="Context"></param>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.IPipelineTrigger.InitOrder">
+            <summary>
+            Initialization order
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.PipelineExecutionException">
+            <summary>
+            Represents an exception that defines a pipeline execution fault
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.PipelineExecutionException.DataSegment">
+            <summary>
+            Gets the data segment
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.PipelineExecutionException.ErrorState">
+            <summary>
+            Gets the last state the pipeline was in before the error occured
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.PipelineExecutionException.FaultingPipeline">
+            <summary>
+            Gets the pipeline that caused the fault
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.PipelineExecutionException.#ctor(MohawkCollege.EHR.gpmr.Pipeline.Pipeline,MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates,System.Collections.Generic.Dictionary{System.String,System.Object},System.Exception)">
+            <summary>
+            Create a new pipeline exception
+            </summary>
+            <param name="FaultingPipeline">The pipeline that is throwing the fault</param>
+            <param name="ErrorState">The last state before the error was thrown</param>
+            <param name="DataSegment">The current data segment</param>
+            <param name="InnerException">The exception that caused the current exception</param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.PipelineExecutionException.ToString">
+            <summary>
+            Convert this exception to a string
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.RendererBase">
+            <summary>
+            The IRenderer interface defines a framework for implementing MIF renderer components. A renderer is 
+            charged with the rendering of a MIF file into a particular format.
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.hostContext">
+            <summary>
+            The pipline that is the context of this renderer
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.Name">
+            <summary>
+            The human friendly name of the renderer component
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.Identifier">
+            <summary>
+            The identifier that is used to identify this renderer at the command line
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.ExecutionOrder">
+            <summary>
+            Get the execution order of the renderer (usually this is 0)
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.ComponentType">
+            <summary>
+            Get the pipeline component type definition 
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.Init(MohawkCollege.EHR.gpmr.Pipeline.Pipeline)">
+            <summary>
+            Initialize the renderer
+            </summary>
+            <param name="Context"></param>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.Execute">
+            <summary>
+            Execute the renderer
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.RendererBase.Help">
+            <summary>
+            Get help for this component
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.StateChangeHandler">
+            <summary>
+            Handler for the pipeline change of state
+            </summary>
+            <param name="Context">The pipeline that is changing state</param>
+            <param name="OldState">The old state the pipeline is in</param>
+            <param name="NewState">The new state the pipeline is entering</param>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Pipeline">
+            <summary>
+            The pipeline is the container that governs the transformation of the source files to 
+            their output.
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates">
+            <summary>
+            Enumeration of possible pipeline states
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.Uninitialized">
+            <summary>
+            The pipeline has not been initiliazed
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.Initialized">
+            <summary>
+            The pipeline components have been loaded and are ready to execute
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.SourceLoaded">
+            <summary>
+            The MIF files have been loaded 
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.Compiled">
+            <summary>
+            The MIF sources have been compiled
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.Rendered">
+            <summary>
+            The output has been rendered
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.Processed">
+            <summary>
+            The entire pipeline has been processed
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.PipelineStates.Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.OperationModeType">
+            <summary>
+            Operation mode
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.OperationModeType.Quirks">
+            <summary>
+            Operate in quirks mode, means that GPMR will forgive errors
+            that might cause it to fail later on
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.OperationModeType.Normal">
+            <summary>
+            Default, Operate in normal mode
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.OperationModeType.Strict">
+            <summary>
+            Operates in strict mode which does not do any additional attempts at interpretation
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.InputFiles">
+            <summary>
+            The stack of input files that need to be processed into the MIF repository
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Mode">
+            <summary>
+            Gets or sets the mode that GPMR operates within
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Output">
+            <summary>
+            Identifies the output directory as specified by the user
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Triggers">
+            <summary>
+            List of pipeline triggers to execute
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Components">
+            <summary>
+            Get or set the pipeline components that are in this pipeline
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Data">
+            <summary>
+            Provides a basic dictionary of data that components may have access to
+            </summary>
+        </member>
+        <member name="P:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.State">
+            <summary>
+            The current state of the pipeline
+            </summary>
+        </member>
+        <member name="E:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.StateChanged">
+            <summary>
+            Fires when the state of the pipeline has changed
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Initialize">
+            <summary>
+            Initialize the pipeline
+            </summary>
+        </member>
+        <member name="M:MohawkCollege.EHR.gpmr.Pipeline.Pipeline.Execute">
+            <summary>
+            Execute the pipeline
+            </summary>
+        </member>
+        <member name="T:MohawkCollege.EHR.gpmr.Pipeline.PipelineComponentType">
+            <summary>
+            Identifies the type of pipeline component used
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.PipelineComponentType.Loader">
+            <summary>
+            The pipeline component is a loading component
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.PipelineComponentType.Compiler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.PipelineComponentType.Renderer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MohawkCollege.EHR.gpmr.Pipeline.PipelineComponentType.Extension">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
